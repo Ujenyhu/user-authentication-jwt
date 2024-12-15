@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>userauthjwt</name>
+    </assembly>
+    <members>
+        <member name="M:userauthjwt.Controllers.UserController.SignUp(userauthjwt.Requests.SignUpRequest)">
+            <summary>
+            Register a new user
+            </summary>
+            <remarks>
+            All fields in the request are required.
+            
+            You cannot register thesame email twice. 
+            The Password is strictly numeric and must be 4 digits
+            </remarks>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:userauthjwt.Controllers.UserController.Refresh(userauthjwt.Requests.TokenRequest)">
+            <summary>
+            Refresh your page
+            </summary>
+            <remarks>
+            All fields in the request are required.
+            </remarks>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:userauthjwt.Controllers.UserController.UpdateUser(userauthjwt.Requests.UpdateUserRequest)">
+            <summary>
+             Update or make changes to User Profile
+            </summary>
+            <remarks>
+             Not all parameters are required. Chnage only the necessary field
+            </remarks>
+             <param name="request"></param>
+        </member>
+        <member name="M:userauthjwt.Controllers.UserController.ChangePassword(userauthjwt.Requests.ChangePasswordRequest)">
+            <summary>
+             Change Password
+            </summary>
+             <param name="request"></param>
+        </member>
+        <member name="M:userauthjwt.Controllers.UserController.GetCurrentUserById(System.String)">
+            <summary>
+            Retrieves complete user profile information of the current logged in user by userId
+            </summary>
+            <param name="UserId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:userauthjwt.Controllers.UserController.GetCurrentUserByEmail(System.String)">
+            <summary>
+            Retrieves complete user profile information of the current logged in user by email address
+            </summary>
+            <param name="EmailAddress"></param>
+            <returns></returns>
+        </member>
+        <member name="M:userauthjwt.Controllers.UserController.GetUserByUserId(System.String)">
+            <summary>
+            Retrieves complete user profile information of any user by userId
+            </summary>
+            <param name="UserId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:userauthjwt.Controllers.UserController.GetUserByEmail(System.String)">
+            <summary>
+            Retrieves complete user profile information of any user by email address
+            </summary>
+            <param name="EmailAddress"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

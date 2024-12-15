@@ -5,7 +5,6 @@ namespace userauthjwt.Helpers
 {
     public class AppHelper
     {
-        //You can use this to generate unique id like user ids
         public static string GetGuid()
         {
             return Guid.NewGuid().ToString();
@@ -42,7 +41,7 @@ namespace userauthjwt.Helpers
             }
         }
 
-        public static string HashPassword(string password, string salt)
+        public static string HashUsingPbkdf2(string password, string salt)
         {
             try
             {
@@ -50,6 +49,21 @@ namespace userauthjwt.Helpers
                 var derivedRandomKey = bytes.GetBytes(32);
                 var hash = Convert.ToBase64String(derivedRandomKey);
                 return hash;
+            }
+            catch (Exception ex)
+            {
+                string sMEssage = ex.Message;
+                return string.Empty;
+            }
+        }
+
+        public static string GenerateRandomNumber()
+        {
+            try
+            {
+                Random rNum = new Random();
+                string sCode = rNum.Next(100000, 999999).ToString();
+                return sCode;
             }
             catch (Exception ex)
             {

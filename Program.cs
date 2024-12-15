@@ -6,8 +6,16 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using System.Reflection;
-using userauthjwt.Interfaces;
-using userauthjwt.Repository;
+using userauthjwt.DataAccess.Repository;
+using userauthjwt.DataAccess.Interfaces;
+using userauthjwt.BusinessLogic.Services.User;
+using userauthjwt.DataAccess.Repositories;
+using userauthjwt.BusinessLogic.Interfaces;
+using userauthjwt.BusinessLogic.Services;
+using Microsoft.AspNetCore.Mvc;
+using System.Net;
+using userauthjwt.Responses;
+using userauthjwt.Middlewares.Exceptions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,39 +36,54 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
         ValidateIssuer = true,
         ValidateAudience = true,
         ValidateIssuerSigningKey = true,
-        ValidIssuer = TokenHelper.Issuer,
-        ValidAudience = TokenHelper.Audience,
-        IssuerSigningKey = new SymmetricSecurityKey(Convert.FromBase64String(TokenHelper.Secret)),
+        ValidIssuer = AuthenticationService.Issuer,
+        ValidAudience = AuthenticationService.Audience,
+        IssuerSigningKey = new SymmetricSecurityKey(Convert.FromBase64String(builder.Configuration["AppSettings:Secret"]))
 
     };
 });
 
-builder.Services.AddControllers();
-builder.Services.AddDbContext<AppDbContext>(op => op.UseSqlServer(builder.Configuration["ConnectionStrings:mssqlConnectionString"]));
-builder.Services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-builder.Services.AddEndpointsApiExplorer();
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration["ConnectionStrings:mssqlConnectionString"],
+    sqlServerOptions =>
+    {
+        sqlServerOptions.EnableRetryOnFailure(maxRetryCount: 3, maxRetryDelay: TimeSpan.FromSeconds(10), errorNumbersToAdd: null);
+    });
+});
+
 
 //------------------Swagger Documentation Section-----------------------
 var contact = new OpenApiContact()
 {
-    Name = "Egwuda Ujenyuojo",
-    Email = "omangy@gmail.com",
+    Name = "",
+    Email = "",
 };
 
 
 var info = new OpenApiInfo()
 {
     Version = "v1",
-    Title = "User Authentication with JWT",
+    Title = "User Authentication Service",
     Contact = contact
 };
 
-builder.Services.AddSwaggerGen(s =>
+
+builder.Services.AddSwaggerGen(c =>
 {
-    s.SwaggerDoc("v1", info);
-    s.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+
+    // Set the comments path for the Swagger JSON and UI.
+    var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+    c.IncludeXmlComments(xmlPath);
+
+    c.SwaggerDoc("v1", info);
+
+
+    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
-        Description = "JWT Authentication/Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 12345abcdef\"",
+        Description = "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 12345abcdef\"",
         Name = "Authorization",
         In = ParameterLocation.Header,
         Type = SecuritySchemeType.ApiKey,
@@ -68,57 +91,92 @@ builder.Services.AddSwaggerGen(s =>
         BearerFormat = "JWT"
     });
 
-    s.AddSecurityRequirement(new OpenApiSecurityRequirement()
-    {
-        {
-             new OpenApiSecurityScheme
-             {
-                 Reference = new OpenApiReference
-                 {
-                     Type = ReferenceType.SecurityScheme,
-                     Id = "Bearer"
-                 }
-             },
-              new string[]{}
-        }
-
-    });
-
-    // Set the comments path for the Swagger JSON and UI.
-    var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-    s.IncludeXmlComments(xmlPath);
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement()
+               {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            }
+                        },
+                        new string[] {}
+                    }
+               });
 });
 
-#region repositories
-builder.Services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-builder.Services.AddScoped(typeof(IUserRepository<>), typeof(UserRepository<>));
-builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+builder.Services.AddTransient<ExceptionHandlingMiddleware>();
+
+#region repositories and services
+
+builder.Services.AddHealthChecks();
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
+builder.Services.AddScoped<IServicesWrapper, ServicesWrapper>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddMemoryCache();
+builder.Services.AddHttpClient();
+
 #endregion
 
+builder.Services.AddControllers().ConfigureApiBehaviorOptions(options =>
+{
+    options.InvalidModelStateResponseFactory = context =>
+    {
+        var errors = context.ModelState.Values
+            .SelectMany(m => m.Errors.Select(e => e.ErrorMessage))
+            .ToList();
+
+        var response = new ResponseBase<object>((int)HttpStatusCode.BadRequest, "Validation error(s) occurred", VarHelper.ResponseStatus.ERROR.ToString())
+        {
+            Message = String.Join(", ", errors)
+        };
+
+        return new JsonResult(response)
+        {
+            StatusCode = (int)HttpStatusCode.BadRequest,
+            ContentType = "application/json",
+        };
+    };
+});
+
+builder.Services.AddEndpointsApiExplorer();
+
 var app = builder.Build();
+
+
+app.UseSwagger(u =>
+{
+u.RouteTemplate = "swagger/{documentName}/swagger.json";
+});
+app.UseSwaggerUI(c =>
+{
+    c.RoutePrefix = "swagger";
+});
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI(
-        c =>
-        {
-            c.RoutePrefix = "swagger";
-            //c.SwaggerEndpoint(url: "/swagger/v1/swagger.json", name: "v1");
-        });
+    app.UseDeveloperExceptionPage();
 }
+
 
 
 app.UseHttpsRedirection();
 
+//Add Middlewares
+app.UseMiddleware<ExceptionHandlingMiddleware>();
+
+app.UseRouting();
 app.UseCors("AllowAllHeaders");
 
 app.UseAuthentication();
-
 app.UseAuthorization();
+
+app.MapHealthChecks("/health");
 
 app.MapControllers();
 
-app.Run();
+await app.RunAsync();
