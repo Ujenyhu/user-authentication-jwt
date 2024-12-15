@@ -34,7 +34,7 @@ The service incorporates advanced security measures, including **account locking
 - **ValidationAttributes and FluentValidation**: API Request Validation.
 
 ## Architecture
-I used the Repository Pattern
+I used the Repository Pattern (Onion Architecture).
 
 - **Controllers**: Handle HTTP requests and responses.
 - **Services**: Business logic for authentication, user management, etc.
