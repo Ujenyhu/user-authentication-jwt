@@ -3,104 +3,100 @@
   "WorkspaceRootPath": "C:\\Applications\\Mine\\C#\\AuthJwt\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|c:\\applications\\mine\\c#\\authjwt\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
-      "RelativeMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|solutionrelative:readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Applications\\Mine\\C#\\AuthJwt\\userauthjwt.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:userauthjwt.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|c:\\applications\\mine\\c#\\authjwt\\license.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|solutionrelative:license.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Applications\\Mine\\C#\\AuthJwt\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|c:\\applications\\mine\\c#\\authjwt\\businesslogic\\services\\mailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|solutionrelative:businesslogic\\services\\mailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Applications\\Mine\\C#\\AuthJwt\\BusinessLogic\\Services\\MailService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BusinessLogic\\Services\\MailService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|c:\\applications\\mine\\c#\\authjwt\\requests\\user\\refreshtokenrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|solutionrelative:requests\\user\\refreshtokenrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Applications\\Mine\\C#\\AuthJwt\\Requests\\User\\RefreshTokenRequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Requests\\User\\RefreshTokenRequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|c:\\applications\\mine\\c#\\authjwt\\requests\\user\\otprequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|solutionrelative:requests\\user\\otprequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Applications\\Mine\\C#\\AuthJwt\\Requests\\User\\OtpRequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Requests\\User\\OtpRequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|c:\\applications\\mine\\c#\\authjwt\\requests\\user\\forgotpasswordrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|solutionrelative:requests\\user\\forgotpasswordrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Applications\\Mine\\C#\\AuthJwt\\README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|c:\\applications\\mine\\c#\\authjwt\\businesslogic\\services\\user\\authenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|solutionrelative:businesslogic\\services\\user\\authenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Applications\\Mine\\C#\\AuthJwt\\Requests\\User\\ForgotPasswordRequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Requests\\User\\ForgotPasswordRequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|c:\\applications\\mine\\c#\\authjwt\\helpers\\apphelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|solutionrelative:helpers\\apphelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Applications\\Mine\\C#\\AuthJwt\\Helpers\\AppHelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Helpers\\AppHelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|c:\\applications\\mine\\c#\\authjwt\\controllers\\userregistrationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|solutionrelative:controllers\\userregistrationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Applications\\Mine\\C#\\AuthJwt\\BusinessLogic\\Services\\User\\AuthenticationService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BusinessLogic\\Services\\User\\AuthenticationService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|c:\\applications\\mine\\c#\\authjwt\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Applications\\Mine\\C#\\AuthJwt\\Controllers\\UserRegistrationController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Controllers\\UserRegistrationController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|c:\\applications\\mine\\c#\\authjwt\\businesslogic\\services\\serviceswrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|solutionrelative:businesslogic\\services\\serviceswrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Applications\\Mine\\C#\\AuthJwt\\Controllers\\UserController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Controllers\\UserController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|c:\\applications\\mine\\c#\\authjwt\\dataaccess\\repositories\\repositorywrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|solutionrelative:dataaccess\\repositories\\repositorywrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Applications\\Mine\\C#\\AuthJwt\\BusinessLogic\\Services\\ServicesWrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BusinessLogic\\Services\\ServicesWrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|c:\\applications\\mine\\c#\\authjwt\\businesslogic\\services\\lookupservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|solutionrelative:businesslogic\\services\\lookupservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Applications\\Mine\\C#\\AuthJwt\\DataAccess\\Repositories\\RepositoryWrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DataAccess\\Repositories\\RepositoryWrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|c:\\applications\\mine\\c#\\authjwt\\dataaccess\\repositories\\lookuprepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|solutionrelative:dataaccess\\repositories\\lookuprepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Applications\\Mine\\C#\\AuthJwt\\BusinessLogic\\Services\\LookupService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BusinessLogic\\Services\\LookupService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|c:\\applications\\mine\\c#\\authjwt\\dataaccess\\interfaces\\irepositorywrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|solutionrelative:dataaccess\\interfaces\\irepositorywrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Applications\\Mine\\C#\\AuthJwt\\DataAccess\\Repositories\\LookupRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DataAccess\\Repositories\\LookupRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|c:\\applications\\mine\\c#\\authjwt\\businesslogic\\interfaces\\iserviceswrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|solutionrelative:businesslogic\\interfaces\\iserviceswrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Applications\\Mine\\C#\\AuthJwt\\DataAccess\\Interfaces\\IRepositoryWrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DataAccess\\Interfaces\\IRepositoryWrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|c:\\applications\\mine\\c#\\authjwt\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|solutionrelative:models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Applications\\Mine\\C#\\AuthJwt\\BusinessLogic\\Services\\User\\UserService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BusinessLogic\\Services\\User\\UserService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|c:\\applications\\mine\\c#\\authjwt\\businesslogic\\services\\user\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|solutionrelative:businesslogic\\services\\user\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Applications\\Mine\\C#\\AuthJwt\\Helpers\\VarHelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Helpers\\VarHelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|c:\\applications\\mine\\c#\\authjwt\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Applications\\Mine\\C#\\AuthJwt\\Models\\AppDbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\AppDbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|c:\\applications\\mine\\c#\\authjwt\\helpers\\varhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|solutionrelative:helpers\\varhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Applications\\Mine\\C#\\AuthJwt\\BusinessLogic\\Interfaces\\IServicesWrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BusinessLogic\\Interfaces\\IServicesWrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|c:\\applications\\mine\\c#\\authjwt\\businesslogic\\interfaces\\user\\iuserregistrationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|solutionrelative:businesslogic\\interfaces\\user\\iuserregistrationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Applications\\Mine\\C#\\AuthJwt\\BusinessLogic\\Interfaces\\User\\IUserRegistrationService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BusinessLogic\\Interfaces\\User\\IUserRegistrationService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|c:\\applications\\mine\\c#\\authjwt\\userauthjwt.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|solutionrelative:userauthjwt.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Applications\\Mine\\C#\\AuthJwt\\BusinessLogic\\Interfaces\\User\\IUserService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BusinessLogic\\Interfaces\\User\\IUserService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|c:\\applications\\mine\\c#\\authjwt\\businesslogic\\interfaces\\user\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|solutionrelative:businesslogic\\interfaces\\user\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Applications\\Mine\\C#\\AuthJwt\\DataAccess\\Repositories\\GenericRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DataAccess\\Repositories\\GenericRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|c:\\applications\\mine\\c#\\authjwt\\dataaccess\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|solutionrelative:dataaccess\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|c:\\applications\\mine\\c#\\authjwt\\helpers\\authenticationhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|solutionrelative:helpers\\authenticationhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Applications\\Mine\\C#\\AuthJwt\\Helpers\\AuthenticationHelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Helpers\\AuthenticationHelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -122,32 +118,6 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "LICENSE.txt",
-              "DocumentMoniker": "C:\\Applications\\Mine\\C#\\AuthJwt\\LICENSE.txt",
-              "RelativeDocumentMoniker": "LICENSE.txt",
-              "ToolTip": "C:\\Applications\\Mine\\C#\\AuthJwt\\LICENSE.txt",
-              "RelativeToolTip": "LICENSE.txt",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2024-12-15T00:59:20.443Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MailService.cs",
-              "DocumentMoniker": "C:\\Applications\\Mine\\C#\\AuthJwt\\BusinessLogic\\Services\\MailService.cs",
-              "RelativeDocumentMoniker": "BusinessLogic\\Services\\MailService.cs",
-              "ToolTip": "C:\\Applications\\Mine\\C#\\AuthJwt\\BusinessLogic\\Services\\MailService.cs",
-              "RelativeToolTip": "BusinessLogic\\Services\\MailService.cs",
-              "ViewState": "AgIAAMIAAAAAAAAAAAAkwJQAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-15T00:58:16.785Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
               "Title": "RefreshTokenRequest.cs",
               "DocumentMoniker": "C:\\Applications\\Mine\\C#\\AuthJwt\\Requests\\User\\RefreshTokenRequest.cs",
@@ -156,8 +126,7 @@
               "RelativeToolTip": "Requests\\User\\RefreshTokenRequest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-15T00:56:58.903Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-15T00:56:58.903Z"
             },
             {
               "$type": "Document",
@@ -169,25 +138,11 @@
               "RelativeToolTip": "Requests\\User\\OtpRequest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-15T00:56:57.461Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-15T00:56:57.461Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "ForgotPasswordRequest.cs",
-              "DocumentMoniker": "C:\\Applications\\Mine\\C#\\AuthJwt\\Requests\\User\\ForgotPasswordRequest.cs",
-              "RelativeDocumentMoniker": "Requests\\User\\ForgotPasswordRequest.cs",
-              "ToolTip": "C:\\Applications\\Mine\\C#\\AuthJwt\\Requests\\User\\ForgotPasswordRequest.cs",
-              "RelativeToolTip": "Requests\\User\\ForgotPasswordRequest.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-15T00:56:55.487Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "README.md",
               "DocumentMoniker": "C:\\Applications\\Mine\\C#\\AuthJwt\\README.md",
               "RelativeDocumentMoniker": "README.md",
@@ -195,207 +150,36 @@
               "RelativeToolTip": "README.md",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2024-12-15T00:15:29.075Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-15T00:15:29.075Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AppHelper.cs",
-              "DocumentMoniker": "C:\\Applications\\Mine\\C#\\AuthJwt\\Helpers\\AppHelper.cs",
-              "RelativeDocumentMoniker": "Helpers\\AppHelper.cs",
-              "ToolTip": "C:\\Applications\\Mine\\C#\\AuthJwt\\Helpers\\AppHelper.cs",
-              "RelativeToolTip": "Helpers\\AppHelper.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAgwC8AAACCAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-15T00:27:25.906Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AuthenticationService.cs",
-              "DocumentMoniker": "C:\\Applications\\Mine\\C#\\AuthJwt\\BusinessLogic\\Services\\User\\AuthenticationService.cs",
-              "RelativeDocumentMoniker": "BusinessLogic\\Services\\User\\AuthenticationService.cs",
-              "ToolTip": "C:\\Applications\\Mine\\C#\\AuthJwt\\BusinessLogic\\Services\\User\\AuthenticationService.cs",
-              "RelativeToolTip": "BusinessLogic\\Services\\User\\AuthenticationService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-15T00:02:14.446Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "UserRegistrationController.cs",
-              "DocumentMoniker": "C:\\Applications\\Mine\\C#\\AuthJwt\\Controllers\\UserRegistrationController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UserRegistrationController.cs",
-              "ToolTip": "C:\\Applications\\Mine\\C#\\AuthJwt\\Controllers\\UserRegistrationController.cs",
-              "RelativeToolTip": "Controllers\\UserRegistrationController.cs",
-              "ViewState": "AgIAAIoAAAAAAAAAAADwv5IAAADUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T23:54:17.609Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Applications\\Mine\\C#\\AuthJwt\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
-              "ToolTip": "C:\\Applications\\Mine\\C#\\AuthJwt\\Controllers\\UserController.cs",
-              "RelativeToolTip": "Controllers\\UserController.cs",
-              "ViewState": "AgIAAHoAAAAAAAAAAAAuwKoAAABJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T23:50:29.893Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ServicesWrapper.cs",
-              "DocumentMoniker": "C:\\Applications\\Mine\\C#\\AuthJwt\\BusinessLogic\\Services\\ServicesWrapper.cs",
-              "RelativeDocumentMoniker": "BusinessLogic\\Services\\ServicesWrapper.cs",
-              "ToolTip": "C:\\Applications\\Mine\\C#\\AuthJwt\\BusinessLogic\\Services\\ServicesWrapper.cs",
-              "RelativeToolTip": "BusinessLogic\\Services\\ServicesWrapper.cs",
-              "ViewState": "AgIAAEoAAAAAAAAAAIAwwFYAAAC/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T23:46:18.631Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "RepositoryWrapper.cs",
-              "DocumentMoniker": "C:\\Applications\\Mine\\C#\\AuthJwt\\DataAccess\\Repositories\\RepositoryWrapper.cs",
-              "RelativeDocumentMoniker": "DataAccess\\Repositories\\RepositoryWrapper.cs",
-              "ToolTip": "C:\\Applications\\Mine\\C#\\AuthJwt\\DataAccess\\Repositories\\RepositoryWrapper.cs",
-              "RelativeToolTip": "DataAccess\\Repositories\\RepositoryWrapper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T23:46:11.271Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "LookupService.cs",
-              "DocumentMoniker": "C:\\Applications\\Mine\\C#\\AuthJwt\\BusinessLogic\\Services\\LookupService.cs",
-              "RelativeDocumentMoniker": "BusinessLogic\\Services\\LookupService.cs",
-              "ToolTip": "C:\\Applications\\Mine\\C#\\AuthJwt\\BusinessLogic\\Services\\LookupService.cs",
-              "RelativeToolTip": "BusinessLogic\\Services\\LookupService.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T23:45:56.352Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "LookupRepository.cs",
-              "DocumentMoniker": "C:\\Applications\\Mine\\C#\\AuthJwt\\DataAccess\\Repositories\\LookupRepository.cs",
-              "RelativeDocumentMoniker": "DataAccess\\Repositories\\LookupRepository.cs",
-              "ToolTip": "C:\\Applications\\Mine\\C#\\AuthJwt\\DataAccess\\Repositories\\LookupRepository.cs",
-              "RelativeToolTip": "DataAccess\\Repositories\\LookupRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T23:45:33.39Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "IRepositoryWrapper.cs",
-              "DocumentMoniker": "C:\\Applications\\Mine\\C#\\AuthJwt\\DataAccess\\Interfaces\\IRepositoryWrapper.cs",
-              "RelativeDocumentMoniker": "DataAccess\\Interfaces\\IRepositoryWrapper.cs",
-              "ToolTip": "C:\\Applications\\Mine\\C#\\AuthJwt\\DataAccess\\Interfaces\\IRepositoryWrapper.cs",
-              "RelativeToolTip": "DataAccess\\Interfaces\\IRepositoryWrapper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T23:45:25.747Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "C:\\Applications\\Mine\\C#\\AuthJwt\\BusinessLogic\\Services\\User\\UserService.cs",
-              "RelativeDocumentMoniker": "BusinessLogic\\Services\\User\\UserService.cs",
-              "ToolTip": "C:\\Applications\\Mine\\C#\\AuthJwt\\BusinessLogic\\Services\\User\\UserService.cs",
-              "RelativeToolTip": "BusinessLogic\\Services\\User\\UserService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T23:24:29.572Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Applications\\Mine\\C#\\AuthJwt\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Applications\\Mine\\C#\\AuthJwt\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAJIAAAAAAAAAAAAkwJ4AAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-14T21:06:07.844Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "VarHelper.cs",
-              "DocumentMoniker": "C:\\Applications\\Mine\\C#\\AuthJwt\\Helpers\\VarHelper.cs",
-              "RelativeDocumentMoniker": "Helpers\\VarHelper.cs",
-              "ToolTip": "C:\\Applications\\Mine\\C#\\AuthJwt\\Helpers\\VarHelper.cs",
-              "RelativeToolTip": "Helpers\\VarHelper.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAA1wBMAAAAVAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "ForgotPasswordRequest.cs",
+              "DocumentMoniker": "C:\\Applications\\Mine\\C#\\AuthJwt\\Requests\\User\\ForgotPasswordRequest.cs",
+              "RelativeDocumentMoniker": "Requests\\User\\ForgotPasswordRequest.cs",
+              "ToolTip": "C:\\Applications\\Mine\\C#\\AuthJwt\\Requests\\User\\ForgotPasswordRequest.cs",
+              "RelativeToolTip": "Requests\\User\\ForgotPasswordRequest.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T21:34:17.749Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-15T00:56:55.487Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Applications\\Mine\\C#\\AuthJwt\\Models\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "Models\\AppDbContext.cs",
-              "ToolTip": "C:\\Applications\\Mine\\C#\\AuthJwt\\Models\\AppDbContext.cs",
-              "RelativeToolTip": "Models\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T23:20:15.97Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "IServicesWrapper.cs",
-              "DocumentMoniker": "C:\\Applications\\Mine\\C#\\AuthJwt\\BusinessLogic\\Interfaces\\IServicesWrapper.cs",
-              "RelativeDocumentMoniker": "BusinessLogic\\Interfaces\\IServicesWrapper.cs",
-              "ToolTip": "C:\\Applications\\Mine\\C#\\AuthJwt\\BusinessLogic\\Interfaces\\IServicesWrapper.cs",
-              "RelativeToolTip": "BusinessLogic\\Interfaces\\IServicesWrapper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T22:06:07.072Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "IUserRegistrationService.cs",
-              "DocumentMoniker": "C:\\Applications\\Mine\\C#\\AuthJwt\\BusinessLogic\\Interfaces\\User\\IUserRegistrationService.cs",
-              "RelativeDocumentMoniker": "BusinessLogic\\Interfaces\\User\\IUserRegistrationService.cs",
-              "ToolTip": "C:\\Applications\\Mine\\C#\\AuthJwt\\BusinessLogic\\Interfaces\\User\\IUserRegistrationService.cs",
-              "RelativeToolTip": "BusinessLogic\\Interfaces\\User\\IUserRegistrationService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAYAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T23:05:06.142Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 0,
               "Title": "userauthjwt.csproj",
               "DocumentMoniker": "C:\\Applications\\Mine\\C#\\AuthJwt\\userauthjwt.csproj",
               "RelativeDocumentMoniker": "userauthjwt.csproj",
@@ -408,7 +192,187 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 2,
+              "Title": "MailService.cs",
+              "DocumentMoniker": "C:\\Applications\\Mine\\C#\\AuthJwt\\BusinessLogic\\Services\\MailService.cs",
+              "RelativeDocumentMoniker": "BusinessLogic\\Services\\MailService.cs",
+              "ToolTip": "C:\\Applications\\Mine\\C#\\AuthJwt\\BusinessLogic\\Services\\MailService.cs",
+              "RelativeToolTip": "BusinessLogic\\Services\\MailService.cs",
+              "ViewState": "AgIAAMIAAAAAAAAAAAAkwJQAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-15T00:58:16.785Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AppHelper.cs",
+              "DocumentMoniker": "C:\\Applications\\Mine\\C#\\AuthJwt\\Helpers\\AppHelper.cs",
+              "RelativeDocumentMoniker": "Helpers\\AppHelper.cs",
+              "ToolTip": "C:\\Applications\\Mine\\C#\\AuthJwt\\Helpers\\AppHelper.cs",
+              "RelativeToolTip": "Helpers\\AppHelper.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAgwC8AAACCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-15T00:27:25.906Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AuthenticationService.cs",
+              "DocumentMoniker": "C:\\Applications\\Mine\\C#\\AuthJwt\\BusinessLogic\\Services\\User\\AuthenticationService.cs",
+              "RelativeDocumentMoniker": "BusinessLogic\\Services\\User\\AuthenticationService.cs",
+              "ToolTip": "C:\\Applications\\Mine\\C#\\AuthJwt\\BusinessLogic\\Services\\User\\AuthenticationService.cs",
+              "RelativeToolTip": "BusinessLogic\\Services\\User\\AuthenticationService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-15T00:02:14.446Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UserRegistrationController.cs",
+              "DocumentMoniker": "C:\\Applications\\Mine\\C#\\AuthJwt\\Controllers\\UserRegistrationController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserRegistrationController.cs",
+              "ToolTip": "C:\\Applications\\Mine\\C#\\AuthJwt\\Controllers\\UserRegistrationController.cs",
+              "RelativeToolTip": "Controllers\\UserRegistrationController.cs",
+              "ViewState": "AgIAAIoAAAAAAAAAAADwv5IAAADUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T23:54:17.609Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Applications\\Mine\\C#\\AuthJwt\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
+              "ToolTip": "C:\\Applications\\Mine\\C#\\AuthJwt\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Controllers\\UserController.cs",
+              "ViewState": "AgIAAHoAAAAAAAAAAAAuwKoAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T23:50:29.893Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ServicesWrapper.cs",
+              "DocumentMoniker": "C:\\Applications\\Mine\\C#\\AuthJwt\\BusinessLogic\\Services\\ServicesWrapper.cs",
+              "RelativeDocumentMoniker": "BusinessLogic\\Services\\ServicesWrapper.cs",
+              "ToolTip": "C:\\Applications\\Mine\\C#\\AuthJwt\\BusinessLogic\\Services\\ServicesWrapper.cs",
+              "RelativeToolTip": "BusinessLogic\\Services\\ServicesWrapper.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAIAwwFYAAAC/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T23:46:18.631Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "RepositoryWrapper.cs",
+              "DocumentMoniker": "C:\\Applications\\Mine\\C#\\AuthJwt\\DataAccess\\Repositories\\RepositoryWrapper.cs",
+              "RelativeDocumentMoniker": "DataAccess\\Repositories\\RepositoryWrapper.cs",
+              "ToolTip": "C:\\Applications\\Mine\\C#\\AuthJwt\\DataAccess\\Repositories\\RepositoryWrapper.cs",
+              "RelativeToolTip": "DataAccess\\Repositories\\RepositoryWrapper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T23:46:11.271Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "LookupService.cs",
+              "DocumentMoniker": "C:\\Applications\\Mine\\C#\\AuthJwt\\BusinessLogic\\Services\\LookupService.cs",
+              "RelativeDocumentMoniker": "BusinessLogic\\Services\\LookupService.cs",
+              "ToolTip": "C:\\Applications\\Mine\\C#\\AuthJwt\\BusinessLogic\\Services\\LookupService.cs",
+              "RelativeToolTip": "BusinessLogic\\Services\\LookupService.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T23:45:56.352Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "LookupRepository.cs",
+              "DocumentMoniker": "C:\\Applications\\Mine\\C#\\AuthJwt\\DataAccess\\Repositories\\LookupRepository.cs",
+              "RelativeDocumentMoniker": "DataAccess\\Repositories\\LookupRepository.cs",
+              "ToolTip": "C:\\Applications\\Mine\\C#\\AuthJwt\\DataAccess\\Repositories\\LookupRepository.cs",
+              "RelativeToolTip": "DataAccess\\Repositories\\LookupRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T23:45:33.39Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "IRepositoryWrapper.cs",
+              "DocumentMoniker": "C:\\Applications\\Mine\\C#\\AuthJwt\\DataAccess\\Interfaces\\IRepositoryWrapper.cs",
+              "RelativeDocumentMoniker": "DataAccess\\Interfaces\\IRepositoryWrapper.cs",
+              "ToolTip": "C:\\Applications\\Mine\\C#\\AuthJwt\\DataAccess\\Interfaces\\IRepositoryWrapper.cs",
+              "RelativeToolTip": "DataAccess\\Interfaces\\IRepositoryWrapper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T23:45:25.747Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Applications\\Mine\\C#\\AuthJwt\\BusinessLogic\\Services\\User\\UserService.cs",
+              "RelativeDocumentMoniker": "BusinessLogic\\Services\\User\\UserService.cs",
+              "ToolTip": "C:\\Applications\\Mine\\C#\\AuthJwt\\BusinessLogic\\Services\\User\\UserService.cs",
+              "RelativeToolTip": "BusinessLogic\\Services\\User\\UserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T23:24:29.572Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "VarHelper.cs",
+              "DocumentMoniker": "C:\\Applications\\Mine\\C#\\AuthJwt\\Helpers\\VarHelper.cs",
+              "RelativeDocumentMoniker": "Helpers\\VarHelper.cs",
+              "ToolTip": "C:\\Applications\\Mine\\C#\\AuthJwt\\Helpers\\VarHelper.cs",
+              "RelativeToolTip": "Helpers\\VarHelper.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAA1wBMAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T21:34:17.749Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Applications\\Mine\\C#\\AuthJwt\\Models\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Models\\AppDbContext.cs",
+              "ToolTip": "C:\\Applications\\Mine\\C#\\AuthJwt\\Models\\AppDbContext.cs",
+              "RelativeToolTip": "Models\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T23:20:15.97Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "IServicesWrapper.cs",
+              "DocumentMoniker": "C:\\Applications\\Mine\\C#\\AuthJwt\\BusinessLogic\\Interfaces\\IServicesWrapper.cs",
+              "RelativeDocumentMoniker": "BusinessLogic\\Interfaces\\IServicesWrapper.cs",
+              "ToolTip": "C:\\Applications\\Mine\\C#\\AuthJwt\\BusinessLogic\\Interfaces\\IServicesWrapper.cs",
+              "RelativeToolTip": "BusinessLogic\\Interfaces\\IServicesWrapper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T22:06:07.072Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "IUserRegistrationService.cs",
+              "DocumentMoniker": "C:\\Applications\\Mine\\C#\\AuthJwt\\BusinessLogic\\Interfaces\\User\\IUserRegistrationService.cs",
+              "RelativeDocumentMoniker": "BusinessLogic\\Interfaces\\User\\IUserRegistrationService.cs",
+              "ToolTip": "C:\\Applications\\Mine\\C#\\AuthJwt\\BusinessLogic\\Interfaces\\User\\IUserRegistrationService.cs",
+              "RelativeToolTip": "BusinessLogic\\Interfaces\\User\\IUserRegistrationService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAYAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T23:05:06.142Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
               "Title": "IUserService.cs",
               "DocumentMoniker": "C:\\Applications\\Mine\\C#\\AuthJwt\\BusinessLogic\\Interfaces\\User\\IUserService.cs",
               "RelativeDocumentMoniker": "BusinessLogic\\Interfaces\\User\\IUserService.cs",
@@ -416,12 +380,11 @@
               "RelativeToolTip": "BusinessLogic\\Interfaces\\User\\IUserService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T21:21:35.968Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-14T21:21:35.968Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 22,
               "Title": "GenericRepository.cs",
               "DocumentMoniker": "C:\\Applications\\Mine\\C#\\AuthJwt\\DataAccess\\Repositories\\GenericRepository.cs",
               "RelativeDocumentMoniker": "DataAccess\\Repositories\\GenericRepository.cs",
@@ -429,12 +392,11 @@
               "RelativeToolTip": "DataAccess\\Repositories\\GenericRepository.cs",
               "ViewState": "AgIAABYAAAAAAAAAAAAQwCIAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T21:20:47.728Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-14T21:20:47.728Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 23,
               "Title": "AuthenticationHelper.cs",
               "DocumentMoniker": "C:\\Applications\\Mine\\C#\\AuthJwt\\Helpers\\AuthenticationHelper.cs",
               "RelativeDocumentMoniker": "Helpers\\AuthenticationHelper.cs",
@@ -442,8 +404,7 @@
               "RelativeToolTip": "Helpers\\AuthenticationHelper.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T21:06:07.82Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-14T21:06:07.82Z"
             }
           ]
         }

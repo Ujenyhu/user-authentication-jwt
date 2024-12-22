@@ -6,6 +6,7 @@
 *.userosscache
 
 .csproj.user
+.csproj
 *.exe
 .editorconfig
 .http
