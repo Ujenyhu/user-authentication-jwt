@@ -7,8 +7,8 @@
       "RelativeMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|solutionrelative:userauthjwt.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|c:\\applications\\mine\\c#\\authjwt\\dockerfile||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|solutionrelative:dockerfile||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|c:\\applications\\mine\\c#\\authjwt\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{719F049C-862C-4C2A-8FDA-ACDA094ABDBF}|userauthjwt.csproj|c:\\applications\\mine\\c#\\authjwt\\middlewares\\exceptions\\exceptionhandlingmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -38,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,28 +54,32 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Applications\\Mine\\C#\\AuthJwt\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Applications\\Mine\\C#\\AuthJwt\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T22:42:49.486Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "userauthjwt",
               "DocumentMoniker": "C:\\Applications\\Mine\\C#\\AuthJwt\\userauthjwt.csproj",
               "RelativeDocumentMoniker": "userauthjwt.csproj",
-              "ToolTip": "C:\\Applications\\Mine\\C#\\AuthJwt\\userauthjwt.csproj",
-              "RelativeToolTip": "userauthjwt.csproj",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAMAAAAaAAAAAAAAAA==",
+              "ToolTip": "C:\\Applications\\Mine\\C#\\AuthJwt\\userauthjwt.csproj*",
+              "RelativeToolTip": "userauthjwt.csproj*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-02-12T22:11:24.544Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Dockerfile",
-              "DocumentMoniker": "C:\\Applications\\Mine\\C#\\AuthJwt\\Dockerfile",
-              "RelativeDocumentMoniker": "Dockerfile",
-              "ToolTip": "C:\\Applications\\Mine\\C#\\AuthJwt\\Dockerfile",
-              "RelativeToolTip": "Dockerfile",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-02-12T22:08:23.809Z",
               "EditorCaption": ""
             },
             {
