@@ -2,11 +2,9 @@
 
 WORKDIR /app
 
-# Copy project files and Restores the project dependencies, downloading the NuGet packages required for the application.
 COPY *.csproj ./
 RUN dotnet restore
 
-# Copy the rest of the application files, Compile and publish
 COPY . ./
 
 RUN dotnet publish -c Release -o /app/publish

@@ -17,6 +17,8 @@ using userauthjwt.Middlewares.Exceptions;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.WebHost.UseUrls("http://*:80");
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAllHeaders", builder =>
