@@ -42,6 +42,7 @@ namespace userauthjwt.BusinessLogic.Services.User
 
         public async Task<ResponseBase<SignUpResponse>> SignUp(SignUpRequest _Request)
         {
+            //This is a reoccurring action and should be done before hitting an action- Use a middleware/Action filter for this
 
             var config = await _repository.SysConfigRepository.FirstOrDefaultAsync();
             int iLoginExpiration = config.LoginTokenExpiration;

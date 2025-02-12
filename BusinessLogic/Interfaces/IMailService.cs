@@ -8,7 +8,6 @@ namespace userauthjwt.BusinessLogic.Interfaces
         Task<bool> SendOtpMail(string sTo, string Body);
         Task<bool> SendSecurityMail(string sTo, string securityType);
 
-        //Task<bool> SendMailAsync(Email email);
 
     }
 }

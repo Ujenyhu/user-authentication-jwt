@@ -22,45 +22,48 @@ namespace userauthjwt.BusinessLogic.Services
             _environment = environment;
         }
 
-        //For default SMTP Implementation
-        public async Task<bool> SendMail(string sTo, string sSubject, string sHtmlBody)
-        {
-            try
-            {
-                var _MailConfig = await _repository.SysConfigRepository.GetMailConfigFirstOrDefaultAsync();
+        /*This method id for the default .net SMTP Implementation */
+        //public async Task<bool> SendMail(string sTo, string sSubject, string sHtmlBody)
+        //{
+        //    try
+        //    {
+        //        var _MailConfig = await _repository.SysConfigRepository.GetMailConfigFirstOrDefaultAsync();
 
-                if (_MailConfig == null)
-                {
-                    // FriendlyErrorMessage = "Missing mail server configuration";
-                    return false;
-                }
+        //        if (_MailConfig == null)
+        //        {
+        //            // FriendlyErrorMessage = "Missing mail server configuration";
+        //            return false;
+        //        }
 
-                using (var mm =  new MailMessage())
-                {
-                    mm.From = new MailAddress(_MailConfig.DefaultEmail);
-                    mm.To.Add(sTo);
-                    mm.Subject = sSubject;
-                    mm.Body = sHtmlBody;
-                    mm.IsBodyHtml = true;
+        //        using (var mm =  new MailMessage())
+        //        {
+        //            mm.From = new MailAddress(_MailConfig.DefaultEmail);
+        //            mm.To.Add(sTo);
+        //            mm.Subject = sSubject;
+        //            mm.Body = sHtmlBody;
+        //            mm.IsBodyHtml = true;
 
-                    //using (var smtp = new SmtpClient(_MailConfig.SmtpServer))
-                    //{
-                    //    smtp.EnableSsl = _MailConfig.SslSupport != 0;
-                    //    smtp.UseDefaultCredentials = false;
-                    //    smtp.Credentials = new NetworkCredential(_MailConfig.SmtpUsername, _MailConfig.SmtpPassword);
-                    //    if (_MailConfig.SmtpPort != 0)
-                    //        smtp.Port = _MailConfig.SmtpPort;
+        //            using (var smtp = new SmtpClient(_MailConfig.SmtpServer))
+        //            {
+        //                smtp.EnableSsl = _MailConfig.SslSupport != 0;
+        //                smtp.UseDefaultCredentials = false;
+        //                smtp.Credentials = new NetworkCredential(_MailConfig.SmtpUsername, _MailConfig.SmtpPassword);
+        //                if (_MailConfig.SmtpPort != 0)
+        //                    smtp.Port = _MailConfig.SmtpPort;
 
-                    //    await smtp.SendMailAsync(mm);
-                    //}
-                }
-                return true;
-            }
-            catch (Exception ex)
-            {
-                return false;
-            }
-        }
+        //                await smtp.SendMailAsync(mm);
+        //            }
+        //        }
+        //        return true;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return false;
+        //    }
+        //}
+
+
+        //Customize your otp mail
 
         public async Task<bool> SendOtpMail(string sTo, string Body)
         {
@@ -74,6 +77,7 @@ namespace userauthjwt.BusinessLogic.Services
                     Body = Body
                 };
 
+                //Send it to this mimekit method to be handled
                 return await SendMailAsync(email);
             }
             catch (Exception ex)
@@ -82,12 +86,13 @@ namespace userauthjwt.BusinessLogic.Services
             }
         }
 
+        //Customize your otp mail
         public async Task<bool> SendSecurityMail(string sTo, string securityType)
         {
             try
             {
 
-                //send email
+                //Set and ovveride params and customize body of email if using an html file
                 string Body;
                 string mailTo = sTo;
                 string mailSubject = "Security Alert";
@@ -136,6 +141,7 @@ namespace userauthjwt.BusinessLogic.Services
                     Subject = mailSubject,
                     Body = Body
                 };
+                //Send it to the mimekit method to be handled
 
                 return await SendMailAsync(email);
             }

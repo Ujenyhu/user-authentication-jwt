@@ -3,6 +3,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace userauthjwt.Models.User
 {
+
+    /* It is always a sounf practice to save and record every action of the user. Especially in a finance related application.
+ * This entity will help us track otp records of a user in the system
+ */
     [Table("OtpRecord", Schema = "dbo")]
     public class OtpRecord
     {

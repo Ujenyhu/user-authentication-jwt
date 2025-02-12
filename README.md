@@ -2,7 +2,7 @@
 
 The **User Authentication Service** is a scalable API built using **C#** designed to handle user authentication and management. 
 It includes essential features such as account registration, secure login, OTP verification, password management, and detailed incident notification. 
-The service incorporates advanced security measures, including **account locking** for suspicious activity and notifications with **device location details**.
+The service uses advanced security measures, including **account locking** for suspicious activity and notifications with **device location details**.
 
 
 ## Features
@@ -29,12 +29,12 @@ The service incorporates advanced security measures, including **account locking
 - **Entity Framework Core**: ORM for database interactions.
 - **Swagger (Swashbuckle)**: For API documentation.
 - **JWT (Json Web Token)**: For secure user authentication.
-- **Twilio/MimeKit**: For SMS and email notifications.
+- **Twilio, Termii & MimeKit**: For SMS and email notifications.
 - **MSSQL**: Database Management System.
 - **ValidationAttributes and FluentValidation**: API Request Validation.
 
 ## Architecture
-I used the Repository Pattern (Onion Architecture).
+I used the Repository Pattern.
 
 - **Controllers**: Handle HTTP requests and responses.
 - **Services**: Business logic for authentication, user management, etc.

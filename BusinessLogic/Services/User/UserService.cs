@@ -44,12 +44,13 @@ namespace userauthjwt.BusinessLogic.Services.User
 
         public async Task<ResponseBase<SignInResponse>> SignIn(SignInRequest request)
         {
-
+            //Never trust anything from the frontend
             if (request == null || string.IsNullOrWhiteSpace(request.EmailAddress) || string.IsNullOrWhiteSpace(request.Password))
             {
                 return new ResponseBase<SignInResponse>((int)HttpStatusCode.BadRequest, "Missing login details", VarHelper.ResponseStatus.ERROR.ToString());
             }
 
+            //This is a reoccurring action and should be done before hitting an action- Use a middleware/Action filter for this
             var _SysConfig = await _repository.SysConfigRepository.FirstOrDefaultAsync();
             int iLoginExpiration = _SysConfig.LoginTokenExpiration;
             if (iLoginExpiration <= 0)
@@ -161,11 +162,6 @@ namespace userauthjwt.BusinessLogic.Services.User
 
             return new ResponseBase<SignInResponse>(response, (int)HttpStatusCode.OK, "Login successful.", VarHelper.ResponseStatus.SUCCESS.ToString());
 
-        }
-
-        private async Task<bool> UserProfileExistsAsync(string id)
-        {
-            return await _repository.UserRepository.GetAnyAsync(e => e.UserId == id);
         }
 
 
@@ -310,6 +306,7 @@ namespace userauthjwt.BusinessLogic.Services.User
 
         public async Task<ResponseBase<AuthenticationResponse>> Refresh(RefreshTokenRequest request)
         {
+            //This is a reoccurring action and should be done before hitting an action- Use a middleware/Action filter for this
 
             var _SysConfig = await _repository.SysConfigRepository.FirstOrDefaultAsync();
             int iLoginExpiration = _SysConfig.LoginTokenExpiration;
@@ -571,6 +568,11 @@ namespace userauthjwt.BusinessLogic.Services.User
 
             return new ResponseBase<UserDetailsResponse>((int)HttpStatusCode.NotFound, "Invalid UserId.", VarHelper.ResponseStatus.ERROR.ToString());
 
+        }
+
+        private async Task<bool> UserProfileExistsAsync(string id)
+        {
+            return await _repository.UserRepository.GetAnyAsync(e => e.UserId == id);
         }
 
     }
