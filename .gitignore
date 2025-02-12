@@ -1,6 +1,16 @@
 
 # User-specific files
-.vs/
+
+
+userauthjwt.csproj.user
+userauthjwt.csproj
+userauthjwt.exe
+.editorconfig
+.http
+userauthjwt.sln
+.gitignore.save
+.gitattributes
+
 
 *.rsuser
 */.suo
@@ -8,28 +18,16 @@
 *.userosscache
 *.sln.docstates
 
-.csproj.user
-.csproj
+
+
+.vs/AuthJwt
+.vs/userauthjwt
+.vs/sd
+.vs/ProjectEvaluation
 *.exe
-.editorconfig
-.http
-*.sln
-.gitignore.save
 
 
 
-
-.csproj.user
-.vs/ColpherTrade/v17/
-*.exe
-.editorconfig
-.http
-*.sln
-.gitignore.save
-
-
-
-# Build results
 [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
@@ -44,23 +42,5 @@ bld/
 [Ll]og/
 [Ll]ogs/
 
-# ASP.NET Scaffolding
-ScaffoldingReadMe.txt
 
-# WebSites
-wwwroot/
-
-# Publish outputs
-*.publishsettings
-.publish/
-*.appx
-*.appxupload
-Package/PublishLogs/
-
-# NuGet packages
-*.nupkg
-*.snupkg
-.nuget/packages/
-.nuget/repository/
-packages/
 
