@@ -2,16 +2,17 @@
 # User-specific files
 
 
-userauthjwt.csproj.user
-userauthjwt.csproj
-userauthjwt.exe
+.csproj.user
+.csproj
+*.exe
 .editorconfig
 .http
-userauthjwt.sln
+*.sln
 .gitignore.save
 .gitattributes
 
 
+.vs/
 *.rsuser
 */.suo
 *.user
@@ -20,14 +21,9 @@ userauthjwt.sln
 
 
 
-.vs/AuthJwt
-.vs/userauthjwt
-.vs/sd
-.vs/ProjectEvaluation
-*.exe
 
 
-
+# Build results
 [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
@@ -42,5 +38,23 @@ bld/
 [Ll]og/
 [Ll]ogs/
 
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
 
+# WebSites
+wwwroot/
+
+# Publish outputs
+*.publishsettings
+.publish/
+*.appx
+*.appxupload
+Package/PublishLogs/
+
+# NuGet packages
+*.nupkg
+*.snupkg
+.nuget/packages/
+.nuget/repository/
+packages/
 
