@@ -208,6 +208,26 @@ namespace userauthjwt.Controllers
 
 
         /// <summary>
+        /// Upload profile image
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [ProducesResponseType(typeof(ResponseBase<UserDetailsResponse>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ResponseBase<object>), StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> UploadProfileImage([Required] UploadImageRequest request)
+        {
+            // Check authorization claims
+            if (!_services.AuthenticationService.IsValidUser(request.UserId)) 
+                return Unauthorized(new ResponseBase<object>((int)HttpStatusCode.Unauthorized, "Invalid user credentials. Please, login and try again.", VarHelper.ResponseStatus.ERROR.ToString()));
+
+
+            var result = await _services.UserService.UploadUserImage(request);
+            return StatusCode(result.StatusCode, result);
+        }
+
+
+        /// <summary>
         /// Retrieves complete user profile by UserId
         /// </summary>
         /// <param name="UserId"></param>
@@ -224,6 +244,7 @@ namespace userauthjwt.Controllers
             var result = await _services.UserService.GetUserProfileByUserId(UserId);
             return StatusCode(result.StatusCode, result);
         }
+
 
     }
 }

@@ -4,6 +4,7 @@
 
 .csproj.user
 .csproj
+userauthjwt.csproj
 *.exe
 .editorconfig
 .http

@@ -9,8 +9,8 @@ namespace userauthjwt.Middlewares.Exceptions
 {
     public class ExceptionHandlingMiddleware : IMiddleware
     {
+
         private readonly ILogger<ExceptionHandlingMiddleware> _logger;
-        private  readonly IDbContextTransaction _transaction;
         public ExceptionHandlingMiddleware(ILogger<ExceptionHandlingMiddleware> logger) => _logger = logger;
 
         public async Task InvokeAsync(HttpContext httpContext, RequestDelegate next)

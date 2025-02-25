@@ -546,6 +546,42 @@ namespace userauthjwt.BusinessLogic.Services.User
         }
 
 
+        public async Task<ResponseBase<object>> UploadProfileImage(UploadImageRequest request)
+        {
+
+            if(string.IsNullOrWhiteSpace(request.UserId) || string.IsNullOrWhiteSpace(request.ImageBase64String))
+            {
+                return new ResponseBase<object>((int)HttpStatusCode.BadRequest, "Invalid request. Value(s) cannot be null", VarHelper.ResponseStatus.ERROR.ToString());
+            }
+
+            //verify UserId
+            var userProfile = await _repository.UserRepository.FindByConditionAsync(user => user.UserId == request.UserId);
+
+            // Check if vendor exists
+            if (userProfile == null)
+                return new ResponseBase<object>((int)HttpStatusCode.BadRequest, "Invalid User", VarHelper.ResponseStatus.ERROR.ToString());
+
+            //Decode file string and convert it to byte
+            byte[] fileBytes = FileHelper.DecodeFileString(request.ImageBase64String);
+            
+            //Confirm File size
+            if (!FileHelper.ValidateFileSize(fileBytes, out string sMessage))
+            {
+                return new ResponseBase<object>((int)HttpStatusCode.BadRequest, sMessage, VarHelper.ResponseStatus.ERROR.ToString());
+            }
+
+            if (!FileHelper.IsImageComplaint(fileBytes))
+            {
+                return new ResponseBase<object>((int)HttpStatusCode.BadRequest, "Invalid file type. Only Image(jpg/png) files are allowed.", VarHelper.ResponseStatus.ERROR.ToString());
+            }
+
+            userProfile.Image = request.ImageBase64String;
+           await _repository.UserRepository.Update(userProfile);
+            await _unitOfWork.CommitAsync();
+
+            return new ResponseBase<object>((int)HttpStatusCode.OK, "Image upload successful.", VarHelper.ResponseStatus.SUCCESS.ToString());
+        }
+
         public async Task<ResponseBase<UserDetailsResponse>> GetUserProfileByUserId(string UserId)
         {
             UserDetailsResponse _User = new UserDetailsResponse();
@@ -569,6 +605,7 @@ namespace userauthjwt.BusinessLogic.Services.User
             return new ResponseBase<UserDetailsResponse>((int)HttpStatusCode.NotFound, "Invalid UserId.", VarHelper.ResponseStatus.ERROR.ToString());
 
         }
+
 
         private async Task<bool> UserProfileExistsAsync(string id)
         {
