@@ -51,6 +51,7 @@ namespace userauthjwt.BusinessLogic.Services
             return new ResponseBase<List<LookupResponse>>(response, 200, "Successfully retrieved", VarHelper.ResponseStatus.SUCCESS.ToString());
         }
 
+
         public async Task<ResponseBase<List<LookupResponse>>> GetUserTypes()
         {
             var filteredQuery = await _repository.LookupRepository.WhereAsync(m => m.MetaDataType == VarHelper.MetaDataTypes.USER_TYPE.ToString());
@@ -63,6 +64,17 @@ namespace userauthjwt.BusinessLogic.Services
             Mapper<MetaDataRef, LookupResponse>.mapList(refs, response);
 
             return new ResponseBase<List<LookupResponse>>(response, 200, "Successfully retrieved", VarHelper.ResponseStatus.SUCCESS.ToString());
+        }
+
+        public async Task<ResponseBase<List<CountryResponse>>> GetCountries()
+        {
+            List<Country> refs = await _repository.LookupRepository.GetCountries();
+
+            var response = new List<CountryResponse>();
+
+            Mapper<Country, CountryResponse>.mapList(refs, response);
+
+            return new ResponseBase<List<CountryResponse>>(response, 200, "Successfully retrieved", VarHelper.ResponseStatus.SUCCESS.ToString());
         }
 
 

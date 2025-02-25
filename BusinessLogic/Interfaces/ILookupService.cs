@@ -9,6 +9,7 @@ namespace userauthjwt.BusinessLogic.Interfaces
         Task<ResponseBase<List<LookupResponse>>> OtpRequestTypes();
         Task<ResponseBase<List<LookupResponse>>> GetUserStatus();
         Task<ResponseBase<List<LookupResponse>>> GetUserTypes();
+        Task<ResponseBase<List<CountryResponse>>> GetCountries();
 
     }
 }

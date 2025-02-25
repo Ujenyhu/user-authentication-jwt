@@ -222,7 +222,7 @@ namespace userauthjwt.Controllers
                 return Unauthorized(new ResponseBase<object>((int)HttpStatusCode.Unauthorized, "Invalid user credentials. Please, login and try again.", VarHelper.ResponseStatus.ERROR.ToString()));
 
 
-            var result = await _services.UserService.UploadUserImage(request);
+            var result = await _services.UserService.UploadProfileImage(request);
             return StatusCode(result.StatusCode, result);
         }
 

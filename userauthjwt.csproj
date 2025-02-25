@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Middlewares\" />
+    <Folder Include="Middlewares\Validations\" />
   </ItemGroup>
 
 </Project>

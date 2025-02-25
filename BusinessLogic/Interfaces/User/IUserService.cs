@@ -13,7 +13,7 @@ namespace userauthjwt.BusinessLogic.Interfaces.User
         Task<ResponseBase<object>> Revoke();
         Task<ResponseBase<object>> ChangePassword(ChangePasswordRequest _Request);
         Task<ResponseBase<object>> ForgotPassword(ForgotPasswordRequest request);
-        Task<ResponseBase<object>> UploadUserImage(UploadImageRequest request);
+        Task<ResponseBase<object>> UploadProfileImage(UploadImageRequest request);
 
         Task<ResponseBase<UserDetailsResponse>> GetUserProfileByUserId(string UserId);
 

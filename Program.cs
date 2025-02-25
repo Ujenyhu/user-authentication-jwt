@@ -14,10 +14,10 @@ using Microsoft.AspNetCore.Mvc;
 using System.Net;
 using userauthjwt.Responses;
 using userauthjwt.Middlewares.Exceptions;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.WebHost.UseUrls("http://*:80");
 
 builder.Services.AddCors(options =>
 {
@@ -51,6 +51,13 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     {
         sqlServerOptions.EnableRetryOnFailure(maxRetryCount: 3, maxRetryDelay: TimeSpan.FromSeconds(10), errorNumbersToAdd: null);
     });
+});
+
+
+builder.Services.AddStackExchangeRedisCache(options =>
+{
+    options.Configuration = builder.Configuration.GetConnectionString("redisConnectionString");
+    options.InstanceName = "UserAuthJwt_";
 });
 
 
@@ -107,17 +114,19 @@ builder.Services.AddSwaggerGen(c =>
                });
 });
 
-builder.Services.AddTransient<ExceptionHandlingMiddleware>();
+
 
 #region repositories and services
 
 builder.Services.AddHealthChecks();
-builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-builder.Services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
-builder.Services.AddScoped<IServicesWrapper, ServicesWrapper>();
-builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.TryAddScoped<IRepositoryWrapper, RepositoryWrapper>();
+builder.Services.TryAddScoped<IServicesWrapper, ServicesWrapper>();
+builder.Services.TryAddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.TryAddSingleton<ICacheService, CacheService>();
 builder.Services.AddMemoryCache();
 builder.Services.AddHttpClient();
+builder.Services.TryAddTransient<ExceptionHandlingMiddleware>();
 
 #endregion
 
