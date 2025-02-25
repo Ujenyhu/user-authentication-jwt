@@ -1,19 +1,21 @@
 ﻿
+using userauthjwt.BusinessLogic.Interfaces;
 using userauthjwt.DataAccess.Interfaces;
 using userauthjwt.DataAccess.Repository;
 using userauthjwt.Models;
 
 namespace userauthjwt.DataAccess.Repositories
 {
-    public class RepositoryWrapper(AppDbContext context, IConfiguration config) : IRepositoryWrapper
+    public class RepositoryWrapper(AppDbContext context, IConfiguration config, ICacheService cacheService) : IRepositoryWrapper
     {
-        private AppDbContext _repoContext = context;
-        private IConfiguration _config = config;
+       private AppDbContext _repoContext = context;
+       private IConfiguration _config = config;
+        private ICacheService _cacheService = cacheService;
 
        private  IUserRegRepository _UserRegRepository;
        private IUserRepository _UserRepository;
        private ISysConfigRepository _SysConfigRepository;
-        private ILookupRepository _LookupRepository;
+       private ILookupRepository _LookupRepository;
 
         public IUserRegRepository UserRegRepository
         {
@@ -57,7 +59,7 @@ namespace userauthjwt.DataAccess.Repositories
             {
                 if (_LookupRepository == null)
                 {
-                    _LookupRepository = new LookupRepository(_repoContext);
+                    _LookupRepository = new LookupRepository(_repoContext, _cacheService);
                 }
                 return _LookupRepository;
             }

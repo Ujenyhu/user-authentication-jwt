@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using ColpherTrade.Middlewares.Validations;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 #nullable disable
@@ -6,7 +7,10 @@ namespace userauthjwt.Requests.User
 {
     public partial class SignUpRequest
     {
-
+        [Required]
+        [RegularExpression(@"^\+\d{1,4}$", ErrorMessage = "Invalid country dialing code format.")]
+        [IsCountryCode]
+        [DefaultValue("string")]
         public string CountryId { get; set; }
 
         [Required]

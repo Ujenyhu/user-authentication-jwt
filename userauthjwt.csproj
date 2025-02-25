@@ -10,6 +10,8 @@
 
   <ItemGroup>
 	  <PackageReference Include="MailKit" Version="3.0.0" />
+	  <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="8.0.13" />
+	  <PackageReference Include="StackExchange.Redis" Version="2.8.24" />
 	  <PackageReference Include="Twilio" Version="7.2.3" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.2" />
