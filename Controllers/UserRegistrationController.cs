@@ -46,6 +46,29 @@ namespace userauthjwt.Controllers
         }
 
 
+
+        /// <summary>
+        /// Confirm is username already exist
+        /// </summary>
+        /// <remarks>
+        ///  This endpoint is to be used during the point of registration during field inout to confirm is username already exist. 
+        ///  No two users are allowed to have thesame username
+        ///  It does not require Bearer authentication
+        /// </remarks>
+        /// <param name="Username"></param>
+        /// <returns>The userId and usertype of the newly created user.</returns>
+        [HttpPost]
+        [AllowAnonymous]
+        [ProducesResponseType(typeof(ResponseBase<SignUpResponse>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ResponseBase<object>), StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> DoesUsernameExist([Required] string Username)
+        {
+            var result = await _services.UserRegistrationService.DoesUsernameExist(Username);
+            return StatusCode(result.StatusCode, result);
+        }
+
+
+
         /// <summary>
         /// sends user verification code to Email or Telephone
         /// </summary>
@@ -131,6 +154,7 @@ namespace userauthjwt.Controllers
             var result = await _services.UserRegistrationService.VerifyOtpReg(request);
             return StatusCode(result.StatusCode, result);
         }
+
 
 
         /// <summary>

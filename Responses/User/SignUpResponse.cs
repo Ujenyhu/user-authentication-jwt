@@ -7,7 +7,9 @@ namespace userauthjwt.Responses.User
         [Required]
         public string UserId { get; set; }
         [Required]
-        public string UserName { get; set; }
+        public string EmailAddress { get; set; }
+        [Required]
+        public string Username { get; set; }
         [Required]
         public string Telephone { get; set; }
         [Required]

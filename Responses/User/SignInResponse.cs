@@ -6,8 +6,10 @@ namespace userauthjwt.Responses.User
     {
         [Required]
         public string UserId { get; set; }
+        public string EmailAddress { get; set; }
+
         [Required]
-        public string UserName { get; set; }
+        public string Username { get; set; }
         [Required]
         public string Token { get; set; }
         public string? RefreshToken { get; set; }

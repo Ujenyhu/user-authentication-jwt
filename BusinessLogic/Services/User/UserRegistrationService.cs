@@ -21,6 +21,7 @@ namespace userauthjwt.BusinessLogic.Services.User
         private readonly IConfiguration _config;
         private readonly IWebHostEnvironment _WebHostEnvironment;
         private readonly IHttpContextAccessor _httpContext;
+        private readonly ICacheService _cacheService;
         public UserRegistrationService(IRepositoryWrapper repository,
             IAuthenticationService authenticationService,
             IUnitOfWork unitOfWork,
@@ -28,7 +29,8 @@ namespace userauthjwt.BusinessLogic.Services.User
             ISmsService smsService,
             IConfiguration config,
             IWebHostEnvironment webHostEnvironment,
-            IHttpContextAccessor httpcontext)
+            IHttpContextAccessor httpcontext,
+            ICacheService cacheService)
         {
             _repository = repository;
             _authenticationService = authenticationService;
@@ -38,6 +40,7 @@ namespace userauthjwt.BusinessLogic.Services.User
             _config = config;
             _httpContext = httpcontext;
             _WebHostEnvironment = webHostEnvironment;
+            _cacheService = cacheService;
         }
 
         public async Task<ResponseBase<SignUpResponse>> SignUp(SignUpRequest _Request)
@@ -66,6 +69,15 @@ namespace userauthjwt.BusinessLogic.Services.User
             if (_UserEmail != null || registeredEmail != null)
             {
                 return new ResponseBase<SignUpResponse>((int)HttpStatusCode.BadRequest, "This email has been registered already.", VarHelper.ResponseStatus.ERROR.ToString());
+            }
+
+            //check if username exists
+            var usernameExist = await _repository.UserRepository.GetAnyAsync(user => user.Username == _Request.Username);
+            var registeredUsername = await _repository.UserRegRepository.GetAnyAsync(user => user.Username == _Request.Username);
+
+            if (usernameExist || registeredUsername)
+            {
+                return new ResponseBase<SignUpResponse>((int)HttpStatusCode.BadRequest, "This username has been registered already.", VarHelper.ResponseStatus.ERROR.ToString());
             }
 
             // var _userId = AppHelper.GetNewUniqueId();
@@ -133,6 +145,52 @@ namespace userauthjwt.BusinessLogic.Services.User
                     throw;
                 }
             }
+        }
+
+
+
+
+        public async Task<ResponseBase<DoesUsernameExistResponse>> DoesUsernameExist(string Username)
+        {
+            //This is a reoccurring action and should be done before hitting an action- Use a middleware/Action filter for this
+
+            var config = await _repository.SysConfigRepository.FirstOrDefaultAsync();
+            int iLoginExpiration = config.LoginTokenExpiration;
+            if (iLoginExpiration <= 0)
+            {
+                return new ResponseBase<DoesUsernameExistResponse>((int)HttpStatusCode.BadRequest, "We are currently undergoing maintenance. Check back in few minutes.", VarHelper.ResponseStatus.ERROR.ToString());
+            }
+
+            if (string.IsNullOrWhiteSpace(Username))
+            {
+                return new ResponseBase<DoesUsernameExistResponse>((int)HttpStatusCode.BadRequest, "Username cannot be empty", VarHelper.ResponseStatus.ERROR.ToString());
+            }
+
+            var response = new DoesUsernameExistResponse();
+            //check if username exists
+            //Check cache first
+            string key = $"username_{Username}";
+            string? cachedVal = await _cacheService.GetAsync<string>(key);
+
+            if(cachedVal != null)
+            {
+                response.UsernameExist = true;
+                return new ResponseBase<DoesUsernameExistResponse>(response, (int)HttpStatusCode.BadRequest, "Username already exist in the system", VarHelper.ResponseStatus.ERROR.ToString());
+            }
+
+            //Retrieve from DB
+            bool existsInRegDb = await _repository.UserRegRepository.GetAnyAsync(x => x.Username == Username);
+            bool existsInDb = await _repository.UserRepository.GetAnyAsync(x => x.Username == Username);
+
+            if(existsInDb || existsInRegDb)
+            {
+                _cacheService.SetAsync(key, Username, TimeSpan.FromMinutes(10));
+                response.UsernameExist = true;
+                return new ResponseBase<DoesUsernameExistResponse>(response, (int)HttpStatusCode.BadRequest, "Username already exist in the system", VarHelper.ResponseStatus.ERROR.ToString());
+
+            }
+            response.UsernameExist = false;
+            return new ResponseBase<DoesUsernameExistResponse>(response, (int)HttpStatusCode.OK, "Proceed with Username", VarHelper.ResponseStatus.SUCCESS.ToString());
         }
 
 

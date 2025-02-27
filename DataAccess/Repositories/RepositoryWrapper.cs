@@ -10,7 +10,7 @@ namespace userauthjwt.DataAccess.Repositories
     {
        private AppDbContext _repoContext = context;
        private IConfiguration _config = config;
-        private ICacheService _cacheService = cacheService;
+       private ICacheService _cacheService = cacheService;
 
        private  IUserRegRepository _UserRegRepository;
        private IUserRepository _UserRepository;

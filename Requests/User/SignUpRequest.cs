@@ -30,6 +30,12 @@ namespace userauthjwt.Requests.User
 
 
         [Required]
+        [MinLength(2)]
+        [MaxLength(20)]
+        public string Username { get; set; }
+
+
+        [Required]
         [EmailAddress]
         public string Email { get; set; }
 

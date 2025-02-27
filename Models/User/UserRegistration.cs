@@ -10,6 +10,7 @@ namespace userauthjwt.Models.User
         public string LastName { get; set; }
 
         public string FirstName { get; set; }
+        public string Username { get; set; }
 
         [Required]
         [StringLength(20)]
