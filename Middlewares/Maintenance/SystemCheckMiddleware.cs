@@ -1,6 +1,7 @@
 ﻿using userauthjwt.DataAccess.Interfaces;
+using userauthjwt.Middlewares.Exceptions;
 
-namespace userauthjwt.Middlewares.Exceptions
+namespace userauthjwt.Middlewares.Maintenance
 {
     public class SystemCheckMiddleware : IMiddleware
     {
