@@ -92,6 +92,7 @@ namespace userauthjwt.BusinessLogic.Services.User
             string sHashedPassword = AppHelper.HashUsingPbkdf2(_Request.Password, sSalt);
 
             newUser.UserId = _userId;
+            newUser.Username = _Request.Username;
             newUser.Telephone = _Request.Telephone;
             newUser.EmailAddress = _Request.Email;
             newUser.PasswordSalt = sSalt;
@@ -175,18 +176,18 @@ namespace userauthjwt.BusinessLogic.Services.User
             if(cachedVal != null)
             {
                 response.UsernameExist = true;
-                return new ResponseBase<DoesUsernameExistResponse>(response, (int)HttpStatusCode.BadRequest, "Username already exist in the system", VarHelper.ResponseStatus.ERROR.ToString());
+                return new ResponseBase<DoesUsernameExistResponse>(response, (int)HttpStatusCode.Conflict, "Username already exist in the system", VarHelper.ResponseStatus.ERROR.ToString());
             }
 
             //Retrieve from DB
             bool existsInRegDb = await _repository.UserRegRepository.GetAnyAsync(x => x.Username == Username);
             bool existsInDb = await _repository.UserRepository.GetAnyAsync(x => x.Username == Username);
 
-            if(existsInDb || existsInRegDb)
+            if(await _repository.UserRegRepository.GetAnyAsync(x => x.Username == Username) || await _repository.UserRepository.GetAnyAsync(x => x.Username == Username))
             {
-                _cacheService.SetAsync(key, Username, TimeSpan.FromMinutes(10));
+                _cacheService.SetAsync(key, true, TimeSpan.FromMinutes(10));
                 response.UsernameExist = true;
-                return new ResponseBase<DoesUsernameExistResponse>(response, (int)HttpStatusCode.BadRequest, "Username already exist in the system", VarHelper.ResponseStatus.ERROR.ToString());
+                return new ResponseBase<DoesUsernameExistResponse>(response, (int)HttpStatusCode.Conflict, "Username already exist in the system", VarHelper.ResponseStatus.ERROR.ToString());
 
             }
             response.UsernameExist = false;
