@@ -15,6 +15,8 @@ namespace userauthjwt.BusinessLogic.Services
         private IHttpContextAccessor _HttpContext;
         private IWebHostEnvironment _WebHostEnvironment;
         private HttpClient _httpClient;
+        private ICacheService _cacheService;
+
 
 
 
@@ -32,7 +34,8 @@ namespace userauthjwt.BusinessLogic.Services
            IMemoryCache cache,
            IWebHostEnvironment webHostEnvironment,
            IHttpContextAccessor httpContext,
-           HttpClient httpClient)
+           HttpClient httpClient,
+           ICacheService cacheService)
         {
             _repository = repository;
             _config = config;
@@ -40,6 +43,7 @@ namespace userauthjwt.BusinessLogic.Services
             _unitOfWork = unitOfWork;
             _WebHostEnvironment = webHostEnvironment;
             _httpClient = httpClient;
+            _cacheService = cacheService;
         }
 
         public IAuthenticationService AuthenticationService
@@ -84,7 +88,7 @@ namespace userauthjwt.BusinessLogic.Services
             {
                 if (_UserRegistrationService == null)
                 {
-                    _UserRegistrationService = new UserRegistrationService(_repository, AuthenticationService, _unitOfWork, MailService, SmsService, _config, _WebHostEnvironment, _HttpContext);
+                    _UserRegistrationService = new UserRegistrationService(_repository, AuthenticationService, _unitOfWork, MailService, SmsService, _config, _WebHostEnvironment, _HttpContext, _cacheService);
                 }
                 return _UserRegistrationService;
             }

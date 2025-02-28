@@ -53,10 +53,6 @@ namespace userauthjwt.BusinessLogic.Services.User
             //This is a reoccurring action and should be done before hitting an action- Use a middleware/Action filter for this
             var _SysConfig = await _repository.SysConfigRepository.FirstOrDefaultAsync();
             int iLoginExpiration = _SysConfig.LoginTokenExpiration;
-            if (iLoginExpiration <= 0)
-            {
-                return new ResponseBase<SignInResponse>((int)HttpStatusCode.BadRequest, "We are currently undergoing maintenance. Check back in few minutes.", VarHelper.ResponseStatus.ERROR.ToString());
-            }
 
             //validate user credentials
             var userProfile = await _repository.UserRepository.FindByConditionAsync(user => user.EmailAddress == request.EmailAddress);

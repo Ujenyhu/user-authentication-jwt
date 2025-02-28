@@ -15,6 +15,7 @@ using System.Net;
 using userauthjwt.Responses;
 using userauthjwt.Middlewares.Exceptions;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using userauthjwt.Middlewares.Maintenance;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -118,6 +119,7 @@ builder.Services.AddSwaggerGen(c =>
 
 #region repositories and services
 
+builder.Services.AddLogging();
 builder.Services.AddHealthChecks();
 builder.Services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.TryAddScoped<IRepositoryWrapper, RepositoryWrapper>();
@@ -126,6 +128,7 @@ builder.Services.TryAddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.TryAddSingleton<ICacheService, CacheService>();
 builder.Services.AddMemoryCache();
 builder.Services.AddHttpClient();
+builder.Services.TryAddTransient<SystemCheckMiddleware>();
 builder.Services.TryAddTransient<ExceptionHandlingMiddleware>();
 
 #endregion
@@ -176,6 +179,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 //Add Middlewares
+app.UseMiddleware<SystemCheckMiddleware>();
 app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 app.UseRouting();
