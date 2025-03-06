@@ -45,14 +45,8 @@ namespace userauthjwt.BusinessLogic.Services.User
 
         public async Task<ResponseBase<SignUpResponse>> SignUp(SignUpRequest _Request)
         {
-            //This is a reoccurring action and should be done before hitting an action- Use a middleware/Action filter for this
-
             var config = await _repository.SysConfigRepository.FirstOrDefaultAsync();
             int iLoginExpiration = config.LoginTokenExpiration;
-            if (iLoginExpiration <= 0)
-            {
-                return new ResponseBase<SignUpResponse>((int)HttpStatusCode.BadRequest, "We are currently undergoing maintenance. Check back in few minutes.", VarHelper.ResponseStatus.ERROR.ToString());
-            }
 
             //check if telephone exists
             var _UserTelephone = await _repository.UserRepository.FindByConditionAsync(user => user.Telephone == _Request.Telephone);
@@ -153,14 +147,9 @@ namespace userauthjwt.BusinessLogic.Services.User
 
         public async Task<ResponseBase<DoesUsernameExistResponse>> DoesUsernameExist(string Username)
         {
-            //This is a reoccurring action and should be done before hitting an action- Use a middleware/Action filter for this
 
             var config = await _repository.SysConfigRepository.FirstOrDefaultAsync();
             int iLoginExpiration = config.LoginTokenExpiration;
-            if (iLoginExpiration <= 0)
-            {
-                return new ResponseBase<DoesUsernameExistResponse>((int)HttpStatusCode.BadRequest, "We are currently undergoing maintenance. Check back in few minutes.", VarHelper.ResponseStatus.ERROR.ToString());
-            }
 
             if (string.IsNullOrWhiteSpace(Username))
             {

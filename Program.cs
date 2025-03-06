@@ -16,6 +16,7 @@ using userauthjwt.Responses;
 using userauthjwt.Middlewares.Exceptions;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using userauthjwt.Middlewares.Maintenance;
+using System.Threading.RateLimiting;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -55,11 +56,54 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 });
 
 
+builder.Services.AddControllers().ConfigureApiBehaviorOptions(options =>
+{
+    options.InvalidModelStateResponseFactory = context =>
+    {
+        var errors = context.ModelState.Values
+            .SelectMany(m => m.Errors.Select(e => e.ErrorMessage))
+            .ToList();
+
+        var response = new ResponseBase<object>((int)HttpStatusCode.BadRequest, "Validation error(s) occurred", VarHelper.ResponseStatus.ERROR.ToString())
+        {
+            Message = String.Join(", ", errors)
+        };
+
+        return new JsonResult(response)
+        {
+            StatusCode = (int)HttpStatusCode.BadRequest,
+            ContentType = "application/json",
+        };
+    };
+});
+
+builder.Services.AddEndpointsApiExplorer();
+
+//Add Distributed Caching
 builder.Services.AddStackExchangeRedisCache(options =>
 {
     options.Configuration = builder.Configuration.GetConnectionString("redisConnectionString");
     options.InstanceName = "UserAuthJwt_";
 });
+
+
+//Enable Rate Limiting
+builder.Services.AddRateLimiter(options =>
+{
+    options.GlobalLimiter = PartitionedRateLimiter.Create<HttpContext, string>(htppContext =>
+       RateLimitPartition.GetFixedWindowLimiter(
+           htppContext.Connection.RemoteIpAddress?.ToString() ?? "unknown",
+           windowOptions => new FixedWindowRateLimiterOptions
+           {
+               PermitLimit = 3,
+               Window = TimeSpan.FromSeconds(10)
+           })
+
+    );
+    options.RejectionStatusCode = (int)HttpStatusCode.TooManyRequests;
+});
+
+
 
 
 //------------------Swagger Documentation Section-----------------------
@@ -133,28 +177,7 @@ builder.Services.TryAddTransient<ExceptionHandlingMiddleware>();
 
 #endregion
 
-builder.Services.AddControllers().ConfigureApiBehaviorOptions(options =>
-{
-    options.InvalidModelStateResponseFactory = context =>
-    {
-        var errors = context.ModelState.Values
-            .SelectMany(m => m.Errors.Select(e => e.ErrorMessage))
-            .ToList();
 
-        var response = new ResponseBase<object>((int)HttpStatusCode.BadRequest, "Validation error(s) occurred", VarHelper.ResponseStatus.ERROR.ToString())
-        {
-            Message = String.Join(", ", errors)
-        };
-
-        return new JsonResult(response)
-        {
-            StatusCode = (int)HttpStatusCode.BadRequest,
-            ContentType = "application/json",
-        };
-    };
-});
-
-builder.Services.AddEndpointsApiExplorer();
 
 var app = builder.Build();
 
@@ -174,7 +197,7 @@ if (app.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
 }
 
-
+app.UseRateLimiter();
 
 app.UseHttpsRedirection();
 
