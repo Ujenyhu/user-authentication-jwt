@@ -215,7 +215,7 @@ namespace userauthjwt.Controllers
         [HttpGet]
         [ProducesResponseType(typeof(ResponseBase<UserDetailsResponse>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseBase<object>), StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> UploadProfileImage([Required] UploadImageRequest request)
+        public async Task<IActionResult> UploadProfileImage([FromBody] UploadImageRequest request)
         {
             // Check authorization claims
             if (!_services.AuthenticationService.IsValidUser(request.UserId)) 
@@ -235,7 +235,7 @@ namespace userauthjwt.Controllers
         [HttpGet]
         [ProducesResponseType(typeof(ResponseBase<UserDetailsResponse>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseBase<object>), StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> GetUserByUserId([Required] string UserId)
+        public async Task<IActionResult> GetUserByUserId([Required] [FromQuery] string UserId)
         {
             // Check authorization claims
             if (!_services.AuthenticationService.IsValidUser(UserId)) return Unauthorized(new ResponseBase<object>((int)HttpStatusCode.Unauthorized, "Invalid user credentials. Please, login and try again.", VarHelper.ResponseStatus.ERROR.ToString()));

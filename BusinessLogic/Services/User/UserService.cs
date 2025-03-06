@@ -50,7 +50,6 @@ namespace userauthjwt.BusinessLogic.Services.User
                 return new ResponseBase<SignInResponse>((int)HttpStatusCode.BadRequest, "Missing login details", VarHelper.ResponseStatus.ERROR.ToString());
             }
 
-            //This is a reoccurring action and should be done before hitting an action- Use a middleware/Action filter for this
             var _SysConfig = await _repository.SysConfigRepository.FirstOrDefaultAsync();
             int iLoginExpiration = _SysConfig.LoginTokenExpiration;
 

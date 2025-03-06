@@ -23,21 +23,27 @@ The service uses advanced security measures, including **account locking** for s
 - **API Documentation**: Detailed API documentation using Swagger (Swashbuckle).
 - **Lookup Service**: This is a service provision to retrieve or lookup values for constant or dynamic metadata/variable of the system.
 
+### Security Features
+- **Rate Limiting**: Prevents brute-force attacks using AspNetCoreRateLimit.
+- **CORS Policy**: Restricts API access to trusted domains.
+- **Data Encryption**: Secure encryption of stored passwords and authentication tokens.
+- **Refresh Token Management**: Securely stores refresh tokens and implements token expiration policies.
+
 ## Technologies Used
 
 - **.NET 7**
 - **Entity Framework Core**: ORM for database interactions.
 - **Swagger (Swashbuckle)**: For API documentation.
 - **JWT (Json Web Token)**: For secure user authentication.
-- **Twilio, Termii & MimeKit**: For SMS and email notifications.
+- **Twilio, Termii, MimeKit & SMTP**: For SMS and email notifications.
 - **MSSQL**: Database Management System.
-- **ValidationAttributes and FluentValidation**: API Request Validation.
+- **Redis**: Caching for increased API performance.
 
 ## Architecture
 I used the Repository Pattern.
 
 - **Controllers**: Handle HTTP requests and responses.
-- **Services**: Business logic for authentication, user management, etc.
+- **Services**: Business logic for authentication, user management, caching etc.
 - **Repositories**: Database access and operations.
 - **Models**: Data structures for requests, responses, and database entities.
 - **Helpers**: For Static and Generic methods.

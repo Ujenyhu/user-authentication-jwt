@@ -201,6 +201,8 @@ app.UseRateLimiter();
 
 app.UseHttpsRedirection();
 
+app.UseHsts();
+
 //Add Middlewares
 app.UseMiddleware<SystemCheckMiddleware>();
 app.UseMiddleware<ExceptionHandlingMiddleware>();
