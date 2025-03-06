@@ -13,7 +13,6 @@ The service uses advanced security measures, including **account locking** for s
 - **JWT Management**: Issue, refresh, and validate access and refresh tokens.
 - **Account Locking**: Lock user accounts after three failed attempts on sensitive actions like login or password changes.
 - **Incident Notifications**: Send email alerts for suspicious activity with details like device location.
-- **Role-Based Authorization**: Implement access control for different user roles.
 
 ### Additional Features
 - **OTP Management**: Generate and validate one-time passwords for sensitive actions.
