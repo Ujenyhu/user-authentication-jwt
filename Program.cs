@@ -17,6 +17,8 @@ using userauthjwt.Middlewares.Exceptions;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using userauthjwt.Middlewares.Maintenance;
 using System.Threading.RateLimiting;
+using Microsoft.AspNetCore.RateLimiting;
+using Newtonsoft.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -101,6 +103,17 @@ builder.Services.AddRateLimiter(options =>
 
     );
     options.RejectionStatusCode = (int)HttpStatusCode.TooManyRequests;
+
+    options.OnRejected = async (context, cancellationToken) =>
+    {
+        context.HttpContext.Response.StatusCode = (int)HttpStatusCode.TooManyRequests;
+        context.HttpContext.Response.ContentType = "application/json";
+
+        var response = new ResponseBase<object>((int)HttpStatusCode.TooManyRequests, "Too many requests. Please try again later.",
+            VarHelper.ResponseStatus.ERROR.ToString());
+
+        await context.HttpContext.Response.WriteAsync(JsonConvert.SerializeObject(response), cancellationToken);
+    };
 });
 
 

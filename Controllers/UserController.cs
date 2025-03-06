@@ -238,6 +238,7 @@ namespace userauthjwt.Controllers
         public async Task<IActionResult> GetUserByUserId([Required] [FromQuery] string UserId)
         {
             // Check authorization claims
+            //The best practice will be to make this method a middleware.
             if (!_services.AuthenticationService.IsValidUser(UserId)) return Unauthorized(new ResponseBase<object>((int)HttpStatusCode.Unauthorized, "Invalid user credentials. Please, login and try again.", VarHelper.ResponseStatus.ERROR.ToString()));
 
 
