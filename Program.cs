@@ -19,6 +19,8 @@ using userauthjwt.Middlewares.Maintenance;
 using System.Threading.RateLimiting;
 using Microsoft.AspNetCore.RateLimiting;
 using Newtonsoft.Json;
+using userauthjwt.BusinessLogic.Interfaces.User;
+using userauthjwt.Middlewares.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -94,7 +96,7 @@ builder.Services.AddRateLimiter(options =>
 {
     options.GlobalLimiter = PartitionedRateLimiter.Create<HttpContext, string>(htppContext =>
        RateLimitPartition.GetFixedWindowLimiter(
-           htppContext.Connection.RemoteIpAddress?.ToString() ?? "unknown",
+          partitionKey: htppContext.Connection.RemoteIpAddress?.ToString() ?? "unknown",
            windowOptions => new FixedWindowRateLimiterOptions
            {
                PermitLimit = 3,
@@ -179,6 +181,7 @@ builder.Services.AddSwaggerGen(c =>
 builder.Services.AddLogging();
 builder.Services.AddHealthChecks();
 builder.Services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.TryAddSingleton<IAuthenticationService, AuthenticationService>();
 builder.Services.TryAddScoped<IRepositoryWrapper, RepositoryWrapper>();
 builder.Services.TryAddScoped<IServicesWrapper, ServicesWrapper>();
 builder.Services.TryAddScoped<IUnitOfWork, UnitOfWork>();
@@ -186,6 +189,7 @@ builder.Services.TryAddSingleton<ICacheService, CacheService>();
 builder.Services.AddMemoryCache();
 builder.Services.AddHttpClient();
 builder.Services.TryAddTransient<SystemCheckMiddleware>();
+builder.Services.TryAddTransient<UserAuthorizationFilter>();
 builder.Services.TryAddTransient<ExceptionHandlingMiddleware>();
 
 #endregion
@@ -218,6 +222,7 @@ app.UseHsts();
 
 //Add Middlewares
 app.UseMiddleware<SystemCheckMiddleware>();
+app.UseMiddleware<UserAuthorizationFilter>();
 app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 app.UseRouting();

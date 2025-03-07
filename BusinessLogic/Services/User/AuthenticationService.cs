@@ -48,14 +48,12 @@ namespace userauthjwt.BusinessLogic.Services.User
                     }
                     if (claim.Value != UserId)
                     {
-                        Console.WriteLine("UserId in Claim does not match UserId passed in the header");
                         return false;
                     }
                     return true;
                 }
                 else
                 {
-                    Console.WriteLine("No header found");
                     return false;
                 }
             }
