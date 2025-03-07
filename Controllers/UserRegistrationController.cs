@@ -157,22 +157,22 @@ namespace userauthjwt.Controllers
 
 
 
-        /// <summary>
-        /// Retrieves complete user registration profile
-        /// </summary>
-        /// <param name="UserId"></param>
-        /// <returns></returns>
-        [HttpGet]
-        [ProducesResponseType(typeof(ResponseBase<UserDetailsResponse>), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(ResponseBase<object>), StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> GetUserByUserId([Required] string UserId)
-        {
-            // Check authorization claims
-            if (!_services.AuthenticationService.IsValidUser(UserId)) return Unauthorized(new ResponseBase<object>((int)HttpStatusCode.Unauthorized, "Invalid user credentials. Please, login and try again.", VarHelper.ResponseStatus.ERROR.ToString()));
+        ///// <summary>
+        ///// Retrieves complete user registration profile
+        ///// </summary>
+        ///// <param name="UserId"></param>
+        ///// <returns></returns>
+        //[HttpGet]
+        //[ProducesResponseType(typeof(ResponseBase<UserDetailsResponse>), StatusCodes.Status200OK)]
+        //[ProducesResponseType(typeof(ResponseBase<object>), StatusCodes.Status404NotFound)]
+        //public async Task<IActionResult> GetUserByUserId([Required] string UserId)
+        //{
+        //    // Check authorization claims
+        //    //This is now done in an Authorization middleware:DONE!!
+        //    // if (!_services.AuthenticationService.IsValidUser(UserId)) return Unauthorized(new ResponseBase<object>((int)HttpStatusCode.Unauthorized, "Invalid user credentials. Please, login and try again.", VarHelper.ResponseStatus.ERROR.ToString()));
 
-
-            var result = await _services.UserService.GetUserProfileByUserId(UserId);
-            return StatusCode(result.StatusCode, result);
-        }
+        //    var result = await _services.UserService.GetUserProfileByUserId(UserId);
+        //    return StatusCode(result.StatusCode, result);
+        //}
     }
 }

@@ -95,7 +95,8 @@ namespace userauthjwt.Controllers
         public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordRequest request)
         {
             // Check authorization claims
-            if (!_services.AuthenticationService.IsValidUser(request.UserId)) return Unauthorized(new ResponseBase<object>((int)HttpStatusCode.Unauthorized, "Invalid user credentials. Please, login and try again.", VarHelper.ResponseStatus.ERROR.ToString()));
+            //This is now done in an Authorization middleware
+           // if (!_services.AuthenticationService.IsValidUser(request.UserId)) return Unauthorized(new ResponseBase<object>((int)HttpStatusCode.Unauthorized, "Invalid user credentials. Please, login and try again.", VarHelper.ResponseStatus.ERROR.ToString()));
 
             var result = await _services.UserService.ChangePassword(request);
 
@@ -113,7 +114,8 @@ namespace userauthjwt.Controllers
         public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordRequest request)
         {
             // Check authorization claims
-            if (!_services.AuthenticationService.IsValidUser(request.UserId)) return Unauthorized(new ResponseBase<object>((int)HttpStatusCode.Unauthorized, "Invalid user credentials. Please, login and try again.", VarHelper.ResponseStatus.ERROR.ToString()));
+            //This is now done in an Authorization middleware
+            //if (!_services.AuthenticationService.IsValidUser(request.UserId)) return Unauthorized(new ResponseBase<object>((int)HttpStatusCode.Unauthorized, "Invalid user credentials. Please, login and try again.", VarHelper.ResponseStatus.ERROR.ToString()));
 
             var result = await _services.UserService.ForgotPassword(request);
             return StatusCode(result.StatusCode, result);
@@ -218,8 +220,9 @@ namespace userauthjwt.Controllers
         public async Task<IActionResult> UploadProfileImage([FromBody] UploadImageRequest request)
         {
             // Check authorization claims
-            if (!_services.AuthenticationService.IsValidUser(request.UserId)) 
-                return Unauthorized(new ResponseBase<object>((int)HttpStatusCode.Unauthorized, "Invalid user credentials. Please, login and try again.", VarHelper.ResponseStatus.ERROR.ToString()));
+            //This is now done in an Authorization middleware
+            //if (!_services.AuthenticationService.IsValidUser(request.UserId)) 
+            //    return Unauthorized(new ResponseBase<object>((int)HttpStatusCode.Unauthorized, "Invalid user credentials. Please, login and try again.", VarHelper.ResponseStatus.ERROR.ToString()));
 
 
             var result = await _services.UserService.UploadProfileImage(request);
@@ -238,8 +241,8 @@ namespace userauthjwt.Controllers
         public async Task<IActionResult> GetUserByUserId([Required] [FromQuery] string UserId)
         {
             // Check authorization claims
-            //The best practice will be to make this method a middleware.
-            if (!_services.AuthenticationService.IsValidUser(UserId)) return Unauthorized(new ResponseBase<object>((int)HttpStatusCode.Unauthorized, "Invalid user credentials. Please, login and try again.", VarHelper.ResponseStatus.ERROR.ToString()));
+            //The best practice will be to make this method a middleware.:DONE!!
+            //if (!_services.AuthenticationService.IsValidUser(UserId)) return Unauthorized(new ResponseBase<object>((int)HttpStatusCode.Unauthorized, "Invalid user credentials. Please, login and try again.", VarHelper.ResponseStatus.ERROR.ToString()));
 
 
             var result = await _services.UserService.GetUserProfileByUserId(UserId);

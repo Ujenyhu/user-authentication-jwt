@@ -21,6 +21,7 @@ using Microsoft.AspNetCore.RateLimiting;
 using Newtonsoft.Json;
 using userauthjwt.BusinessLogic.Interfaces.User;
 using userauthjwt.Middlewares.Authorization;
+using MassTransit;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -193,6 +194,20 @@ builder.Services.TryAddTransient<ExceptionHandlingMiddleware>();
 
 #endregion
 
+
+//builder.Services.AddMassTransit(busConfig =>
+//{
+//    busConfig.UsingRabbitMq((context, rbmqConfig) =>
+//    {
+//        rbmqConfig.Host("rabbitmq://localhost", hostConfig =>
+//        {
+//            hostConfig.Username("guest");
+//             hostConfig.Password("guest");
+//        });
+
+//        rbmqConfig.UseMessageRetry(r => r.Incremental(3, TimeSpan.FromSeconds(2), TimeSpan.FromSeconds(3)));
+//    });
+//});
 
 
 var app = builder.Build();

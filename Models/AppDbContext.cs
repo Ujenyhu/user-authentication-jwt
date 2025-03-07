@@ -22,6 +22,7 @@ namespace userauthjwt.Models
             get; set;
         }
 
+        public virtual DbSet<AuditLogs> AuditLogs { get; set; }
         public virtual DbSet<Country> Country { get; set; }
         public virtual DbSet<SmsConfig> SmsConfig { get; set; }
         public virtual DbSet<SysConfig> SysConfig { get; set; }
