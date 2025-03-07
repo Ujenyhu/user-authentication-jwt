@@ -5,6 +5,7 @@ using System.Security.Claims;
 using System.Text.Json;
 using userauthjwt.BusinessLogic.Interfaces;
 using userauthjwt.BusinessLogic.Interfaces.User;
+using userauthjwt.DataAccess.Interfaces;
 using userauthjwt.Helpers;
 using userauthjwt.Middlewares.Exceptions;
 using userauthjwt.Responses;
@@ -14,59 +15,64 @@ namespace userauthjwt.Middlewares.Authorization
     public class UserAuthorizationFilter : IMiddleware
     {
         private readonly ILogger<UserAuthorizationFilter> _logger;
-        private readonly IAuthenticationService _authService;
-        public UserAuthorizationFilter(ILogger<UserAuthorizationFilter> logger, IAuthenticationService authService)
+        private readonly IServiceScopeFactory _scopeFactory;
+        public UserAuthorizationFilter(ILogger<UserAuthorizationFilter> logger, IServiceScopeFactory scopeFactory)
         {
            _logger = logger;
-            _authService = authService;
+            _scopeFactory = scopeFactory;
         } 
 
         public async Task InvokeAsync(HttpContext httpContext, RequestDelegate next)
         {
             try
             {
-                var endpoint = httpContext.GetEndpoint();
-                var allowAnon = endpoint?.Metadata.GetMetadata<Microsoft.AspNetCore.Authorization.AllowAnonymousAttribute>();
-
-                if(allowAnon == null)
+                using (var scope = _scopeFactory.CreateScope())
                 {
+                    var _authService = scope.ServiceProvider.GetRequiredService<IAuthenticationService>();
 
-                    string userId = httpContext.Request.Query["UserId"].ToString();
+                    var endpoint = httpContext.GetEndpoint();
+                    var allowAnon = endpoint?.Metadata.GetMetadata<Microsoft.AspNetCore.Authorization.AllowAnonymousAttribute>();
 
-                    //If not found in query, check request body
-                    if (string.IsNullOrEmpty(userId) && httpContext.Request.ContentType == "application/json")
+                    if (allowAnon == null)
                     {
-                        httpContext.Request.EnableBuffering(); 
+                        string userId = httpContext.Request.Query["UserId"].ToString();
 
-                        using (var reader = new StreamReader(httpContext.Request.Body, leaveOpen: true))
+                        //If not found in query, check request body
+                        if (string.IsNullOrEmpty(userId) && httpContext.Request.ContentType == "application/json")
                         {
-                            var body = await reader.ReadToEndAsync();
-                            httpContext.Request.Body.Position = 0;
+                            httpContext.Request.EnableBuffering();
 
-                            if (!string.IsNullOrEmpty(body))
+                            using (var reader = new StreamReader(httpContext.Request.Body, leaveOpen: true))
                             {
-                                var jsonDoc = JsonDocument.Parse(body);
-                                if (jsonDoc.RootElement.TryGetProperty("userId", out var userIdReq))
+                                var body = await reader.ReadToEndAsync();
+                                httpContext.Request.Body.Position = 0;
+
+                                if (!string.IsNullOrEmpty(body))
                                 {
-                                    userId = userIdReq.GetString();
+                                    var jsonDoc = JsonDocument.Parse(body);
+                                    if (jsonDoc.RootElement.TryGetProperty("userId", out var userIdReq))
+                                    {
+                                        userId = userIdReq.GetString();
+                                    }
                                 }
                             }
                         }
-                    }
 
-                    if (string.IsNullOrWhiteSpace(userId))
-                    {
-                        await HandleAuthException(httpContext, null);
-                    }
-                    else
-                    {
-                        var isValidUser = _authService.IsValidUser(userId);
-                        if(!isValidUser) await HandleAuthException(httpContext, null);
+                        if (string.IsNullOrWhiteSpace(userId))
+                        {
+                            await HandleAuthException(httpContext, null);
+                        }
+                        else
+                        {
+                            var isValidUser = _authService.IsValidUser(userId);
+                            if (!isValidUser) await HandleAuthException(httpContext, null);
+                        }
+
                     }
 
                 }
-
                 await next(httpContext);
+
             }
             catch (Exception ex)
             {

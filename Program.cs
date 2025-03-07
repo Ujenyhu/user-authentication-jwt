@@ -181,7 +181,6 @@ builder.Services.AddSwaggerGen(c =>
 builder.Services.AddLogging();
 builder.Services.AddHealthChecks();
 builder.Services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-builder.Services.TryAddSingleton<IAuthenticationService, AuthenticationService>();
 builder.Services.TryAddScoped<IRepositoryWrapper, RepositoryWrapper>();
 builder.Services.TryAddScoped<IServicesWrapper, ServicesWrapper>();
 builder.Services.TryAddScoped<IUnitOfWork, UnitOfWork>();
