@@ -1,17 +1,28 @@
-﻿using Microsoft.AspNetCore.Mvc.Filters;
+﻿
 using Newtonsoft.Json;
 using System.Net;
-using System.Security.Claims;
 using System.Text.Json;
-using userauthjwt.BusinessLogic.Interfaces;
 using userauthjwt.BusinessLogic.Interfaces.User;
-using userauthjwt.DataAccess.Interfaces;
 using userauthjwt.Helpers;
-using userauthjwt.Middlewares.Exceptions;
 using userauthjwt.Responses;
 
 namespace userauthjwt.Middlewares.Authorization
 {
+
+    /* Initially, I used IMiddleware for my authorization filter to restrict unauthorized users 
+     * before the request reaches the controller. This ensures that endpoints requiring JWT authentication 
+     * are validated early, before routing, preventing unnecessary processing.
+     *
+     * However, this approach introduced additional implementation, such as:
+     * 1. Checking if the endpoint allows anonymous access.
+     * 2. Determining whether the user ID is passed in the query, path, or request body.
+     *
+     * While these checks are valid, it's important to choose the most suitable implementation for the application's needs. 
+     * Since my goal is to enforce user validation at the method or class level, I decided to use Action Filters instead of middleware.
+     */
+
+
+    //This middleware will not be registered in the pipeline
     public class UserAuthorizationFilter : IMiddleware
     {
         private readonly ILogger<UserAuthorizationFilter> _logger;

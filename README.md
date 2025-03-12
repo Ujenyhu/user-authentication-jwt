@@ -27,6 +27,9 @@ The service uses advanced security measures, including **account locking** for s
 - **CORS Policy**: Restricts API access to trusted domains.
 - **Data Encryption**: Secure encryption of stored passwords and authentication tokens.
 - **Refresh Token Management**: Securely stores refresh tokens and implements token expiration policies.
+- **Soft Delete**: For data tracking.
+- **Activity Logs**: Store User Sign-ins, Password changes, and failed attempts
+- **Audit Trail**: Track and save user change activities
 
 ## Technologies Used
 

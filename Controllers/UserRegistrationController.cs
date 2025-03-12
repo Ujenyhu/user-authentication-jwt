@@ -1,14 +1,11 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using userauthjwt.BusinessLogic.Interfaces;
 using userauthjwt.Requests.User;
 using userauthjwt.Responses.User;
 using userauthjwt.Responses;
 using System.ComponentModel.DataAnnotations;
-using System.Net;
-using userauthjwt.Helpers;
 
 namespace userauthjwt.Controllers
 {

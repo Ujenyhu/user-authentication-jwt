@@ -10,6 +10,8 @@
 
   <ItemGroup>
 	  <PackageReference Include="MailKit" Version="3.0.0" />
+	  <PackageReference Include="MassTransit" Version="8.3.7" />
+	  <PackageReference Include="MassTransit.RabbitMQ" Version="8.3.7" />
 	  <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="8.0.13" />
 	  <PackageReference Include="StackExchange.Redis" Version="2.8.24" />
 	  <PackageReference Include="Twilio" Version="7.2.3" />
@@ -23,7 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Middlewares\Validations\" />
+    <Folder Include="Validations\" />
   </ItemGroup>
 
 </Project>

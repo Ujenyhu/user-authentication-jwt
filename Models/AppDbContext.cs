@@ -17,6 +17,13 @@ namespace userauthjwt.Models
         {
         }
 
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.AddInterceptors(new SoftDeleteInterceptor());
+        }
+
+
         public virtual DbSet<FailedSecurityAttempt> FailedSecurityAttempt
         {
             get; set;
@@ -41,6 +48,7 @@ namespace userauthjwt.Models
                 entity.HasKey(u => u.UserId);
                 entity.Property(u => u.UserStatus).ValueGeneratedOnAdd();
                 entity.Property(u => u.UserType).ValueGeneratedOnAdd();
+                entity.HasQueryFilter(x => !x.IsDeleted);
 
             });
 
@@ -49,7 +57,12 @@ namespace userauthjwt.Models
                 entity.HasKey(u => u.UserId);
                 entity.Property(u => u.UserStatus).ValueGeneratedOnAdd();
                 entity.Property(u => u.UserType).ValueGeneratedOnAdd();
+
+                entity.HasQueryFilter(x => !x.IsDeleted);
+                entity.HasIndex(x => x.IsDeleted);
             });
+
+
         }
     }
 }

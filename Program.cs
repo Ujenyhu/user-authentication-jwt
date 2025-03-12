@@ -188,8 +188,8 @@ builder.Services.TryAddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.TryAddSingleton<ICacheService, CacheService>();
 builder.Services.AddMemoryCache();
 builder.Services.AddHttpClient();
+//builder.Services.TryAddSingleton<SoftDeleteInterceptor>();
 builder.Services.TryAddTransient<SystemCheckMiddleware>();
-builder.Services.TryAddTransient<UserAuthorizationFilter>();
 builder.Services.TryAddTransient<ExceptionHandlingMiddleware>();
 
 #endregion
@@ -236,7 +236,6 @@ app.UseHsts();
 
 //Add Middlewares
 app.UseMiddleware<SystemCheckMiddleware>();
-app.UseMiddleware<UserAuthorizationFilter>();
 app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 app.UseRouting();

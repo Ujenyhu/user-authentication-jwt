@@ -1,6 +1,7 @@
-﻿using ColpherTrade.Middlewares.Validations;
+﻿
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using userauthjwt.Validations;
 
 #nullable disable
 namespace userauthjwt.Requests.User

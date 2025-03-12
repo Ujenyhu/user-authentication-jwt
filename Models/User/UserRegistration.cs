@@ -1,8 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using userauthjwt.DataAccess.Interfaces;
 
 namespace userauthjwt.Models.User
 {
-    public class UserRegistration
+    public class UserRegistration : ISoftDelete
     {
         [Key]
         public string UserId { get; set; }
@@ -30,5 +31,7 @@ namespace userauthjwt.Models.User
         public string UserType { get; set; }
         public string UserStatus { get; set; }
         public DateTime DateRegistered { get; set; }
+        public bool IsDeleted { get; set; }
+        public DateTime? DeletedAt { get; set; }
     }
 }

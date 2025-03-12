@@ -1,7 +1,7 @@
 ﻿using userauthjwt.DataAccess.Interfaces;
 using System.ComponentModel.DataAnnotations;
 
-namespace ColpherTrade.Middlewares.Validations
+namespace userauthjwt.Validations
 {
     public class IsCountryCode : ValidationAttribute
     {
@@ -11,7 +11,7 @@ namespace ColpherTrade.Middlewares.Validations
                 return new ValidationResult("The CountryCode field is required");
 
             //Get repository
-            var repo = (IRepositoryWrapper)validationContext.GetRequiredService<IRepositoryWrapper>();
+            var repo = validationContext.GetRequiredService<IRepositoryWrapper>();
 
             var supportedCodes = repo.LookupRepository.GetCountries().Result.Select(x => x.DialingCode);
 

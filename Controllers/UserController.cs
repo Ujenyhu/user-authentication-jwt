@@ -3,12 +3,7 @@ using userauthjwt.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System.Text.RegularExpressions;
-using Azure;
-using Microsoft.AspNetCore.Authentication.OAuth;
-using Azure.Core;
-using userauthjwt.DataAccess.Interfaces;
+
 using userauthjwt.Requests.User;
 using userauthjwt.Responses.User;
 using userauthjwt.Models.User;
@@ -16,6 +11,7 @@ using System.ComponentModel.DataAnnotations;
 using userauthjwt.BusinessLogic.Interfaces;
 using userauthjwt.Responses;
 using System.Net;
+using userauthjwt.Filters;
 
 namespace userauthjwt.Controllers
 {
@@ -77,6 +73,7 @@ namespace userauthjwt.Controllers
         [HttpPost]
         [ProducesResponseType(typeof(ResponseBase<object>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseBase<object>), StatusCodes.Status400BadRequest)]
+        [ServiceFilter(typeof(ValidateUserFilter))]
         public async Task<IActionResult> Revoke()
         {
             var result = await _services.UserService.Revoke();
@@ -92,6 +89,7 @@ namespace userauthjwt.Controllers
         [HttpPost]
         [ProducesResponseType(typeof(ResponseBase<object>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseBase<object>), StatusCodes.Status400BadRequest)]
+        [ServiceFilter(typeof(ValidateUserFilter))]
         public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordRequest request)
         {
             // Check authorization claims
@@ -111,6 +109,8 @@ namespace userauthjwt.Controllers
         [HttpPost]
         [ProducesResponseType(typeof(ResponseBase<object>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseBase<object>), StatusCodes.Status400BadRequest)]
+        [ServiceFilter(typeof(ValidateUserFilter))]
+
         public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordRequest request)
         {
             // Check authorization claims
@@ -158,6 +158,8 @@ namespace userauthjwt.Controllers
         [HttpPost]
         [ProducesResponseType(typeof(ResponseBase<OtpResponse>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseBase<object>), StatusCodes.Status400BadRequest)]
+        [ServiceFilter(typeof(ValidateUserFilter))]
+
         public async Task<IActionResult> SendOtp([FromBody] OtpRequest request)
         {
             var result = await _services.UserService.SendOtp(request);
@@ -202,6 +204,8 @@ namespace userauthjwt.Controllers
         [HttpPost]
         [ProducesResponseType(typeof(ResponseBase<OtpResponse>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseBase<object>), StatusCodes.Status400BadRequest)]
+        [ServiceFilter(typeof(ValidateUserFilter))]
+
         public async Task<IActionResult> VerifyOtp([FromBody] VerifyOtpRequest request)
         {
             var result = await _services.UserService.VerifyOtp(request);
@@ -217,6 +221,8 @@ namespace userauthjwt.Controllers
         [HttpGet]
         [ProducesResponseType(typeof(ResponseBase<UserDetailsResponse>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseBase<object>), StatusCodes.Status404NotFound)]
+        [ServiceFilter(typeof(ValidateUserFilter))]
+
         public async Task<IActionResult> UploadProfileImage([FromBody] UploadImageRequest request)
         {
             // Check authorization claims
@@ -238,6 +244,8 @@ namespace userauthjwt.Controllers
         [HttpGet]
         [ProducesResponseType(typeof(ResponseBase<UserDetailsResponse>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseBase<object>), StatusCodes.Status404NotFound)]
+        [ServiceFilter(typeof(ValidateUserFilter))]
+
         public async Task<IActionResult> GetUserByUserId([Required] [FromQuery] string UserId)
         {
             // Check authorization claims

@@ -1,11 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using userauthjwt.DataAccess.Interfaces;
 
 #nullable enable
 namespace userauthjwt.Models.User
 {
     [Table("UserProfile", Schema = "dbo")]
-    public partial class UserProfile
+    public partial class UserProfile : ISoftDelete
     {
         [Key]
         [StringLength(50)]
@@ -37,6 +38,8 @@ namespace userauthjwt.Models.User
         public int? FailedPinAttempt { get; set; }
         public DateTime? LastFailedPinAttempt { get; set; }
         public DateTime DateAdded { get; set; }
+        public bool IsDeleted { get; set; }
+        public DateTime? DeletedAt { get; set; }
     }
 
 }
