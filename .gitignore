@@ -1,5 +1,4 @@
 
-# User-specific files
 
 
 .csproj.user
@@ -22,9 +21,6 @@ userauthjwt.csproj
 
 
 
-
-
-# Build results
 [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
@@ -39,23 +35,15 @@ bld/
 [Ll]og/
 [Ll]ogs/
 
-# ASP.NET Scaffolding
-ScaffoldingReadMe.txt
 
-# WebSites
+
 wwwroot/
 
-# Publish outputs
 *.publishsettings
 .publish/
 *.appx
 *.appxupload
 Package/PublishLogs/
 
-# NuGet packages
-*.nupkg
-*.snupkg
-.nuget/packages/
-.nuget/repository/
-packages/
+
 

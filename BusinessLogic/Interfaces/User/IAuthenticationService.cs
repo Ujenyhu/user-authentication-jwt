@@ -29,5 +29,6 @@ namespace userauthjwt.BusinessLogic.Interfaces.User
         IPAddress? GetRemoteHostIpAddressUsingXRealIp();
         UserAgentInfo GetBrowserInfo();
         Task<LocationData?> GetIPInfo();
+        string GetUserIdFromClaim();
     }
 }

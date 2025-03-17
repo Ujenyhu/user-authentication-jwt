@@ -385,6 +385,28 @@ namespace userauthjwt.BusinessLogic.Services.User
         }
 
 
+        public string GetUserIdFromClaim()
+        {
+            string userId = string.Empty;
+            string authorizationHeader = _httpContext.HttpContext?.Request?.Headers["Authorization"];
+
+            // Check if Authorization header is present and has a valid bearer token
+            if (!string.IsNullOrEmpty(authorizationHeader) && (authorizationHeader.StartsWith("Bearer ") || authorizationHeader.StartsWith("bearer ")))
+            {
+                // Retrieve ClaimsPrincipal and look for the "UserId" claim
+                ClaimsPrincipal user = _httpContext.HttpContext?.User;
+                Claim claim = user?.FindFirst("UserId");
+
+                if (claim != null)
+                {
+                    userId = claim.Value;
+                }
+            }
+
+            return userId;
+        }
+
+
         public class UserAgentInfo
         {
             public string UserAgent { get; set; }

@@ -185,6 +185,7 @@ builder.Services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.TryAddScoped<IRepositoryWrapper, RepositoryWrapper>();
 builder.Services.TryAddScoped<IServicesWrapper, ServicesWrapper>();
 builder.Services.TryAddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
 builder.Services.TryAddSingleton<ICacheService, CacheService>();
 builder.Services.AddMemoryCache();
 builder.Services.AddHttpClient();

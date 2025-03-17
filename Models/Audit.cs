@@ -4,14 +4,13 @@ using System.ComponentModel.DataAnnotations;
 namespace userauthjwt.Models
 {
     [Table("AuditLogs", Schema = "dbo")]
-    public class AuditLogs
+    public class Audit
     {
         [Key]
         [StringLength(50)]
         public string RecId { get; set; }
         [StringLength(200)]
         public string? UserId { get; set; }
-        public string? AppUser { get; set; }
         public string Type { get; set; }
         public string? IP { get; set; }
         public string? Controller { get; set; }

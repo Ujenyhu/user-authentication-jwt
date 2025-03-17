@@ -50,6 +50,14 @@
             PASSWORDCHANGE,
         }
 
+        public enum AuditType
+        {
+            NONE = 0,
+            CREATE = 1,
+            UPDATE = 2,
+            DELETE = 3
+        }
+
 
         public const string loginSecurityMsg = "Multiple failed login attempt(s) has been carried out on your account, If this action was not performed by you, please contact customer care.";
         public const string PasswordChangeSecurityMsg = "Multiple failed passwod change attempt(s) has been carried out on your account, If this action was not performed by you, please contact customer care.";
